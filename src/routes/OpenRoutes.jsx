@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import BoilerPlateContainer from './../boiler-plate/views/components/BoilerPlateContainer';
+import Home from '../components/pages/Home';
 
 class OpenRoutes extends Component {
   render() {
     return (
       <div>
-        <Route exact path="/" component={BoilerPlateContainer} />
+        <Route exact path="/" component={Home} />
       </div>
     );
   }

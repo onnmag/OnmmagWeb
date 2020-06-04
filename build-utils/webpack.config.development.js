@@ -1,14 +1,11 @@
 module.exports = () => ({
   devServer: {
+    port: 9000,
     proxy: {
-      '/planchoice': {
-        target: 'http://10.14.0.83:8083',
-        bypass(req, res, proxyOptions) {
-          if (req.headers.accept.indexOf('html') !== -1) {
-            console.log('Skipping proxy for browser request.');
-            return '/index.html';
-          }
-        },
+      '/api': {
+        target: 'http://localhost:8080',
+        secure: false,
+        pathRewrite: { '^/api': '' },
       },
     },
     host: '0.0.0.0',

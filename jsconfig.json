@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "jsx": "react",
+    "paths": {
+      "@common/*": ["components/common"],
+      "@modules/*": ["components/modules"],
+      "@pages/*": ["components/pages"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
