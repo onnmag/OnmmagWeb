@@ -32,11 +32,17 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
      */
     resolve: {
       extensions: ['.js', '.jsx', '.scss'],
+      alias: {
+        '@common': path.resolve(__dirname, 'src/components/common'),
+        '@modules': path.resolve(__dirname, 'src/components/modules'),
+        '@pages': path.resolve(__dirname, 'src/components/pages')
+      }
     },
     entry: {
       start: './src/App.jsx',
       react: ['react', 'react-dom'],
     },
+
 
     output: {
       path: BUILD_DIR,
@@ -63,13 +69,11 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
         {
           test: /\.scss$/,
           use: [
-            'style-loader',
             MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
-                modules: false,
-                sourceMap: true,
+                modules: true,
                 importLoader: 2,
               },
             },

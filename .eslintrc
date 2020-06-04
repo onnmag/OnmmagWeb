@@ -15,6 +15,13 @@
   "settings": {
     "react:" : {
       "version": "15.6.1"
+    },
+    "alias": {
+      "map": [
+        ["@common", "./src/components/common"],
+        ["@pages", "./src/components/pages"],
+        ["@modules", "./src/components/modules"]
+      ]
     }
   },
   "parserOptions": {
