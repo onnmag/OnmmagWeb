@@ -30,17 +30,17 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
      * If you do not add these webpack will not recognize the file
      * and it will say file or module not found.
      */
-    resolve: {
-      extensions: ['.js', '.jsx', '.scss'],
-      alias: {
-        '@common': path.resolve(__dirname, 'src/components/common'),
-        '@modules': path.resolve(__dirname, 'src/components/modules'),
-        '@pages': path.resolve(__dirname, 'src/components/pages')
-      }
-    },
     entry: {
       start: './src/App.jsx',
       react: ['react', 'react-dom'],
+    },
+    resolve: {
+      alias: {
+        '@common': path.resolve(__dirname, 'src/components/common'),
+        '@modules': path.resolve(__dirname, 'src/components/modules'),
+        '@pages': path.resolve(__dirname, 'src/components/pages'),
+      },
+      extensions: ['.js', '.jsx'],
     },
 
 
