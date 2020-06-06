@@ -6,7 +6,8 @@
     "paths": {
       "@common/*": ["components/common"],
       "@modules/*": ["components/modules"],
-      "@pages/*": ["components/pages"]
+      "@pages/*": ["components/pages"],
+      "@utils/*": ["utils"]
     }
   },
   "exclude": ["node_modules"]

@@ -6,7 +6,7 @@ import Home from '../components/pages/Home';
 class OpenRoutes extends Component {
   render() {
     return (
-      <div>
+      <div style={{ height: '100%' }}>
         <Route exact path="/" component={Home} />
       </div>
     );

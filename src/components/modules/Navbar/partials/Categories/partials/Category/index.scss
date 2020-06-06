@@ -1,0 +1,45 @@
+@import '../../../../../../../styles/main';
+
+.container {
+  padding-bottom: .2rem;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  > *:first-child {
+    margin-right: .5rem;
+  }
+  transition: width .5s;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+.displayName {
+  overflow: hidden;
+  transition: width .5s;
+}
+
+.activeCategory {
+  letter-spacing: 1px;
+}
+
+.home {
+  border-bottom-color: RGB(var(--purple));
+  color: RGB(var(--purple));
+}
+
+.music  {
+  border-bottom-color: RGB(var(--pink));
+  color: RGB(var(--pink));
+}
+
+.video {
+  border-bottom-color: RGB(var(--yellow));
+  color: RGB(var(--yellow));
+}
+
+.news {
+  border-bottom-color: RGB(var(--blue));
+  color: RGB(var(--blue));
+}

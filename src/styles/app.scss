@@ -1,3 +1,48 @@
-.app-div {
-  color: #0f0;
+// GLOBAL RESET
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.75%;
+  scroll-behavior: smooth;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+
+[data-theme='light'] {
+  --default: #fff;
+  --primary-color: #00baf1;
+  --bg-color: #fafafa;
+  --primary-border-color: #dbdbdb;
+  --purple: 91, 55,183;
+  --blue: 24, 138,174;
+  --yellow: 230, 169, 25;
+  --pink: 201, 55, 157;
+  --black: 0, 0, 0;
+}
+
+[data-theme='dark'] {
+  --default: #fff;
+  --primary-color: #f9fbfd;
+  --bg-color: #18191a;
+  --primary-border-color: #dbdbdb;
+  --black: 0, 0, 0;
 }
