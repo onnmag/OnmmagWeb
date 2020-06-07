@@ -1,33 +1,22 @@
 import React, { useState, useRef } from 'react';
 
-import { handleCloseAnimation } from '@utils/animations';
-
 import HamburgerMenu from './partials/HamburgerMenu';
 import Menu from './partials/Menu';
 import styles from './index.scss';
 
 function SideBar() {
   const [isOpen, handleIsOpen] = useState(false);
-  const menuRef = useRef(null);
 
   const handleMenuState = (modalState) => {
-    if (modalState) {
-      handleIsOpen(true);
-    } else {
-      handleCloseAnimation({
-        animationClass: styles.slideOut,
-        ref: menuRef,
-        callBack: () => handleIsOpen(false),
-      });
-    }
+    handleIsOpen(modalState);
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <HamburgerMenu handleIsOpen={handleMenuState} isOpen={isOpen} />
       {
         isOpen && (
-          <div className={styles.container} ref={menuRef}>
+          <div className={styles.menuContainer}>
             <Menu isOpen={isOpen} />
           </div>
         )

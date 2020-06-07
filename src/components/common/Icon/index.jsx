@@ -7,7 +7,7 @@ import ICON_NAME, { ICON } from './enum';
 const ACTIVE_THEME = 'LIGHT';
 const SIZE_MULTIPLIER = 5;
 
-function Icon({ name, size, primaryClass, secondaryClass }) {
+function Icon({ name, size, primaryClass, secondaryClass, className }) {
   function getClassName() {
     return cx(ICON[ACTIVE_THEME][name], {
       [primaryClass]: primaryClass,
@@ -15,7 +15,7 @@ function Icon({ name, size, primaryClass, secondaryClass }) {
     });
   }
   return (
-    <div>
+    <div className={className}>
       <i className={getClassName()} style={{ width: `${size * SIZE_MULTIPLIER}px`, height: `${size * SIZE_MULTIPLIER}px` }} />
     </div>
   );
@@ -26,6 +26,7 @@ Icon.propTypes = {
   size: PropTypes.number,
   primaryClass: PropTypes.string,
   secondaryClass: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Icon.defaultProps = {
@@ -33,6 +34,7 @@ Icon.defaultProps = {
   size: 5,
   primaryClass: '',
   secondaryClass: '',
+  className: '',
 };
 
 export default Icon;

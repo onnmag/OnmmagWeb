@@ -5,6 +5,6 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: $default;
+  background-color: RGB(var(--white));
   border: 1px solid $primaryBorderColor;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import NavBar from '../../modules/Navbar';
-import Header from '../../modules/Header';
+import NavBar from '@modules/Navbar';
 
 import styles from './index.scss';
 

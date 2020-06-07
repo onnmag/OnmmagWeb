@@ -1,0 +1,16 @@
+@import '../../../../../styles/main';
+
+.container {
+  display: flex;
+  color: RGB(var(--manatee));
+
+  > * {
+    cursor: pointer;
+  }
+
+  > *:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+
+

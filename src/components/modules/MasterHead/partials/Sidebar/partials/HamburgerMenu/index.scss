@@ -1,4 +1,4 @@
-@import '../../../../../styles/main';
+@import '../../../../../../../styles/main';
 
 .navigation {
   display: flex;
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $default;
+  background-color: RGB(var(--white));
   height: 4rem;
   width: 4rem;
   border-radius: 50%;

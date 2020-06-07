@@ -10,7 +10,10 @@
     "build": "webpack --env.mode development",
     "start": "webpack-dev-server --hot --inline --env.mode development --history-api-fallback",
     "watch:perf": "yarn run build --env.presets analyze",
-    "test": "jest __tests__/**/*.spec.js"
+    "test": "jest __tests__/**/*.spec.js",
+    "lint": "eslint --ext .jsx --ext .js src/ --ignore-pattern node_modules/ && scss-lint",
+    "lint:fix": "eslint --ext .jsx --ext .js src/ --ignore-pattern node_modules/ --fix",
+    "sass-lint": "scss-lint"
   },
   "repository": {
     "type": "git",
