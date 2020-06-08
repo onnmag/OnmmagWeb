@@ -1,7 +1,7 @@
 import React, { useRef, useCallback, useState } from 'react';
 import random from 'random-name';
 
-import PostCard from '@common/PostCard';
+import PostCard from '../../common/PostCard';
 import useFetchFeeds from '../../../hooks/useFetchFeeds';
 import { LINKS, CONTENT_TYPE } from '../../../Enums/STATICS';
 

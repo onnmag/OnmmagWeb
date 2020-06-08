@@ -3,13 +3,19 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-function Header({ title, profileImage, name }) {
+function Header({ title, name }) {
   const [imageUrl, setImageUrl] = useState('');
+  const [isImageLoaded, setImageLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetch('https://picsum.photos/40/40.jpg')
       .then(res => {
         setImageUrl(res.url);
+        const img = new Image();
+        img.onload = () => {
+          setImageLoaded(true);
+        };
+        img.src = res.url;
         setIsLoading(false);
       });
   }, []);
@@ -17,7 +23,7 @@ function Header({ title, profileImage, name }) {
     <div className={styles.container}>
       <div className={styles.about}>
         {
-          isLoading ?
+          isLoading && !isImageLoaded ?
             <span className={styles.loader} /> :
             <img src={imageUrl} alt={name} className={styles.image} />
         }
@@ -32,11 +38,13 @@ function Header({ title, profileImage, name }) {
 
 Header.propTypes = {
   title: PropTypes.string,
+  name: PropTypes.string,
 
 };
 
 Header.defaultProps = {
   title: '',
+  name: '',
 };
 
 export default Header;

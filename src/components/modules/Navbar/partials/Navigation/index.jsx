@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Icon from '@common/Icon';
-import Avatar from '@common/Avatar';
-import ICON_NAME from '@common/Icon/enum';
+import Icon from '../../../../common/Icon';
+import Avatar from '../../../../common/Avatar';
+import ICON_NAME from '../../../../common/Icon/enum';
 
 import styles from './index.scss';
 

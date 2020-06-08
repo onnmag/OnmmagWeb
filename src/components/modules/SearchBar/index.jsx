@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Icon from '@common/Icon';
-import ICON_NAME from '@common/Icon/enum';
+import Icon from '../../common/Icon';
+import ICON_NAME from '../../common/Icon/enum';
 
 import { STATICS } from '../../../Enums/STATICS';
 import styles from './index.scss';

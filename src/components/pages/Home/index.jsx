@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NavBar from '@modules/Navbar';
-import Feeds from '@modules/Feeds';
+import NavBar from '../../modules/Navbar';
+import Feeds from '../../modules/Feeds';
 
 import styles from './index.scss';
 
