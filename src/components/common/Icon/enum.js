@@ -14,6 +14,8 @@ const ICONS_NAME = {
   NOTIFICATION: 'NOTIFICATION',
   MESSAGE: 'MESSAGE',
   FRIENDS: 'FRIENDS',
+  LIKE: 'LIKE',
+  SHARE: 'SHARE',
 };
 
 
@@ -27,6 +29,8 @@ const ICON = {
     [ICONS_NAME.NOTIFICATION]: 'fas fa-bell',
     [ICONS_NAME.MESSAGE]: 'fas fa-comments-alt',
     [ICONS_NAME.FRIENDS]: 'fas fa-users',
+    [ICONS_NAME.LIKE]: 'fas fa-thumbs-up',
+    [ICONS_NAME.SHARE]: 'fas fa-share-alt',
   },
   [THEME.DARK]: {
     [ICONS_NAME.HOME]: 'fal fa-home',
@@ -37,6 +41,7 @@ const ICON = {
     [ICONS_NAME.NOTIFICATION]: 'fas fa-bell',
     [ICONS_NAME.MESSAGE]: 'fas fa-comments-alt',
     [ICONS_NAME.FRIENDS]: 'fas fa-users',
+    [ICONS_NAME.SHARE]: 'fas fa-share-alt',
   },
 };
 

@@ -25,11 +25,12 @@
   "author": "Onnmag",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "on-build-webpack": "^0.1.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.6.1",
+    "random-name": "^0.1.2",
     "react": "^16.8.6",
     "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
