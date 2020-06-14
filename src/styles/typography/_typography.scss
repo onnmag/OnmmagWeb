@@ -1,5 +1,9 @@
 // scss-lint:disable PropertySpelling
 @mixin fontSize($size) {
+  @if $size == header {
+    font-size: 5rem;
+  }
+
   @if $size == h1 {
     font-size: 3.2rem;
   }
@@ -34,6 +38,18 @@
 
   @if $size == h9 {
     font-size: .8rem;
+  }
+
+  @if $size == H1 {
+    font-size: 8rem;
+  }
+
+  @if $size == H2 {
+    font-size: 5rem;
+  }
+
+  @if $size == H3 {
+    font-size: 3rem;
   }
 }
 

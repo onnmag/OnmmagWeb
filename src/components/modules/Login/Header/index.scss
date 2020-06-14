@@ -1,0 +1,13 @@
+@import '../../../../styles/main';
+
+.container {
+  @include typography(H2);
+  height: 7rem;
+  background-color: RGB(var(--primary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: RGB(var(--white));
+  text-transform: uppercase;
+  letter-spacing: 2rem;
+}

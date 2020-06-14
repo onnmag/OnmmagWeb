@@ -1,0 +1,41 @@
+@import '../../../../styles/main';
+
+.container {
+  display: flex;
+}
+
+.contentSlider {
+  margin-top: 7rem;
+  flex: 2 0 0;
+}
+
+.signUpContainer {
+  //margin: 9rem 1rem 3rem 1rem;
+  flex: 1 0 0;
+  background: RGB(var(--primary-color));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  @include typography(H1);
+  color: RGBA(var(--black), .8);
+  margin-bottom: 4rem;
+}
+
+.subHeader {
+  @include typography(H3);
+  color: RGBA(var(--black), .8);
+  margin-bottom: 1rem;
+}
+
+.disclaimer {
+  @include typography(h5);
+  color: RGBA(var(--black), .8);
+  margin-bottom: 7rem;
+}

@@ -1,5 +1,6 @@
 const STATICS = {
   INPUT_PLACEHOLDER: 'Quick Access',
+  ONNMAG: 'onnmag',
 };
 
 const CONTENT_TYPE = {
@@ -11,8 +12,14 @@ const LINKS = {
   RANDOM_POST: 'https://picsum.photos/600/600.jpg',
 };
 
+const INPUT_TYPES = {
+  EMAIL: 'EMAIL',
+  PASSWORD: 'PASSWORD',
+};
+
 export {
   STATICS,
   LINKS,
   CONTENT_TYPE,
+  INPUT_TYPES,
 };

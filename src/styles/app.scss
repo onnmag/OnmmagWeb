@@ -24,6 +24,8 @@ html,body {
   overflow: hidden;
 }
 
+// 54, 57, 63
+//93,185,181
 body {
   font-family: "Lato", sans-serif;
 }
@@ -33,6 +35,8 @@ a, a:visited, a:hover {
 }
 
 [data-theme='light'] {
+  --primary-color: 93,185,181;
+  --secondary-color: 232,193,185;
   --white: 255, 255, 255;
   --bg-color: 250, 250, 250;
   --primary-border-color: #dbdbdb;
@@ -48,7 +52,8 @@ a, a:visited, a:hover {
 
 [data-theme='dark'] {
   --white: 255, 255, 255;
-  --primary-color: #f9fbfd;
+  --primary-color: 93,185,181;
+  --secondary-color: 232,193,185;
   --bg-color: #18191a;
   --primary-border-color: #dbdbdb;
   --manatee: #8E949D;
