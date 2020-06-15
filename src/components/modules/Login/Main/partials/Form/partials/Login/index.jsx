@@ -35,14 +35,28 @@ function Login() {
       />
 
       <div className={styles.btnContainer}>
-        <Button
-          text={BUTTON.LOGIN}
-          onClick={() => {}}
-        />
+        <Button onClick={() => {}}>
+          {BUTTON.LOGIN}
+        </Button>
       </div>
       <div className={styles.label}>
         <span>{STATICS.NEED_AN_ACCOUNT}</span>
-        <span>{STATICS.REGISTER}</span>
+      </div>
+
+      <div className={styles.btnContainer}>
+        <Button onClick={() => {}}>
+          {BUTTON.SIGN_UP}
+        </Button>
+      </div>
+
+      <div className={styles.qrCodeContainer}>
+        <div className={styles.qrCode}>
+          <img src="https://pngimg.com/uploads/qr_code/qr_code_PNG26.png" />
+        </div>
+        <p className={styles.qrheader}>Log in with QR Code</p>
+        <p className={styles.qrDescription}>Scan this with the ONNMAG App
+          to log in instantly.
+        </p>
       </div>
     </div>
   );

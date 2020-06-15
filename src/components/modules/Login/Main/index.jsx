@@ -16,7 +16,6 @@ function Main() {
           <p className={styles.disclaimer}>{STATICS.DISCLAIMER}</p>
         </div>
         <FeedSlider />
-        <FeedSlider />
       </div>
       <div className={styles.signUpContainer}>
         <Form />

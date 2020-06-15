@@ -21,10 +21,14 @@
 
 .input {
   width: 35rem;
-  border: none;
   outline: none;
   border-radius: 2rem;
   padding: 1rem;
   font-size: 2rem;
   color: RGBA(var(--black), .7);
+  border: 3px solid transparent;
+
+  &:focus {
+    border-color: RGB(var(--secondary-color));
+  }
 }

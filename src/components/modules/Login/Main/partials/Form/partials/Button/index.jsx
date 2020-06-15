@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 
 import styles from './index.scss';
 
-function Button({ text, onClick, disabled }) {
+function Button({ children, onClick, disabled }) {
   return (
     <button
       disabled={disabled}
       className={styles.btn}
       onClick={onClick}
     >
-      {text}
+      {children}
     </button>
   );
 }
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
 };
