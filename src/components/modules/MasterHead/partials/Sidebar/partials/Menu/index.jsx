@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Pages from './partials/Pages';
+
 function Menu() {
   return (
     <div>
-      Menu
+      <Pages />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 const STATICS = {
-  HEADER: 'Designers Secret Source',
-  SUB_HEADER: 'The best design inspiration - expertly curated for you.',
-  DISCLAIMER: 'Muzli is a new-tab Chrome extension that instantly delivers relevant design stories and inspiration.',
+  HEADER: 'Lorem Ipsum is simply dummy',
+  SUB_HEADER: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  DISCLAIMER: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   WELCOME_BACK: 'Welcome Back!',
   NEED_AN_ACCOUNT: 'Need an account?',
   REGISTER: 'Register',

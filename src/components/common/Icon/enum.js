@@ -16,6 +16,8 @@ const ICONS_NAME = {
   FRIENDS: 'FRIENDS',
   LIKE: 'LIKE',
   SHARE: 'SHARE',
+  MOVIES: 'MOVIES',
+  ARTICLES: 'ARTICLES',
 };
 
 
@@ -31,6 +33,8 @@ const ICON = {
     [ICONS_NAME.FRIENDS]: 'fas fa-users',
     [ICONS_NAME.LIKE]: 'fas fa-thumbs-up',
     [ICONS_NAME.SHARE]: 'fas fa-share-alt',
+    [ICONS_NAME.MOVIES]: 'fal fa-film-alt',
+    [ICONS_NAME.ARTICLES]: 'fal fa-file-alt',
   },
   [THEME.DARK]: {
     [ICONS_NAME.HOME]: 'fal fa-home',
@@ -42,6 +46,8 @@ const ICON = {
     [ICONS_NAME.MESSAGE]: 'fas fa-comments-alt',
     [ICONS_NAME.FRIENDS]: 'fas fa-users',
     [ICONS_NAME.SHARE]: 'fas fa-share-alt',
+    [ICONS_NAME.MOVIES]: 'fal fa-film-alt',
+    [ICONS_NAME.ARTICLES]: 'fal fa-file-alt ',
   },
 };
 

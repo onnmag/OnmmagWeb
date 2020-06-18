@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import useInputField from '../../../../../../../../hooks/useInputField';
 import { INPUT_LABELS, STATICS, BUTTON } from '../../../../enum';
@@ -9,6 +10,7 @@ import Button from '../Button';
 import styles from './index.scss';
 
 function Login() {
+  const history = useHistory();
   const email = useInputField({ type: INPUT_TYPES.EMAIL });
   const password = useInputField({ type: INPUT_TYPES.PASSWORD });
   return (
@@ -35,7 +37,7 @@ function Login() {
       />
 
       <div className={styles.btnContainer}>
-        <Button onClick={() => {}}>
+        <Button onClick={() => { history.push('/home'); }}>
           {BUTTON.LOGIN}
         </Button>
       </div>
@@ -51,7 +53,7 @@ function Login() {
 
       <div className={styles.qrCodeContainer}>
         <div className={styles.qrCode}>
-          <img src="https://pngimg.com/uploads/qr_code/qr_code_PNG26.png" />
+          <img src="https://pngimg.com/uploads/qr_code/qr_code_PNG26.png" alt="qrCode" />
         </div>
         <p className={styles.qrheader}>Log in with QR Code</p>
         <p className={styles.qrDescription}>Scan this with the ONNMAG App

@@ -1,0 +1,34 @@
+@import '../../../../../../../../../styles/main';
+
+.container {
+
+}
+
+.tabContainer {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: RGB(var(--zambezi));
+
+  &:hover {
+    background-color: RGB(var(--secondary-color));
+    color: RGB(var(--white));
+  }
+}
+
+.active {
+  background-color: RGB(var(--primary-color));
+  color: RGB(var(--white));
+  cursor: default;
+
+  &:hover {
+    background-color: RGB(var(--primary-color));
+    color: RGB(var(--white));
+  }
+}
+
+.displayName {
+  @include typography(h3);
+  margin-left: 1rem;
+}
