@@ -13,7 +13,7 @@
 }
 
 .label {
-  @include typography(h2);
+  @include typography(h4);
   color: RGB(var(--white));
   margin-right: 2rem;
   margin-bottom: 1rem;
@@ -23,8 +23,7 @@
   width: 35rem;
   outline: none;
   border-radius: 2rem;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: .5rem;
   color: RGBA(var(--black), .7);
   border: 3px solid transparent;
 

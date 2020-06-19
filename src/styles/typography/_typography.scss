@@ -41,15 +41,15 @@
   }
 
   @if $size == H1 {
-    font-size: 8rem;
+    font-size: 6rem;
   }
 
   @if $size == H2 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   @if $size == H3 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
