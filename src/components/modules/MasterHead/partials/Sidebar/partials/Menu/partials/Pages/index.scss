@@ -18,6 +18,7 @@
 }
 
 .active {
+  @include typography(h6, semibold);
   background-color: RGB(var(--primary-color));
   color: RGB(var(--white));
   cursor: default;
@@ -29,6 +30,6 @@
 }
 
 .displayName {
-  @include typography(h3);
+  @include typography(h6);
   margin-left: 1rem;
 }

@@ -10,7 +10,7 @@ import styles from './index.scss';
 function Pages() {
   const [activePage, setActivePage] = useState(SIDEBAR.PAGES[0].id);
   return (
-    <div className={styles.container}>
+    <div>
       {
         SIDEBAR.PAGES.map(page => (
           <div
