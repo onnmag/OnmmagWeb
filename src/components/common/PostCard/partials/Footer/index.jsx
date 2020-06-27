@@ -6,8 +6,7 @@ import ICONS_NAME from '../../../Icon/enum';
 
 import styles from './index.scss';
 
-function Footer({ id }) {
-  console.log({ id });
+function Footer() {
   return (
     <div className={styles.container}>
       <div className={styles.about}>

@@ -30,3 +30,7 @@
 .title {
   @include typography(h6);
 }
+
+.profileNav {
+  color: RGB(var(--zambezi));
+}

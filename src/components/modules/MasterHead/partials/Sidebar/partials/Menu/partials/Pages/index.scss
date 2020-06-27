@@ -17,6 +17,11 @@
   }
 }
 
+.link {
+  display: flex;
+  color: inherit;
+}
+
 .active {
   @include typography(h6, semibold);
   background-color: RGB(var(--primary-color));

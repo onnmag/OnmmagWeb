@@ -1,17 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
+import Login from '../components/pages/Login';
 import Home from '../components/pages/Home';
-import LoginLayout from '../components/pages/Login';
+import ROUTES from '../components/pages/Home/Routes/routes';
 
-class OpenRoutes extends Component {
-  render() {
+const OpenRoutes = () => {
+    const getExactValue = (exact) => {
+      if (exact === false) {
+        return exact;
+      }
+        return true;
+    };
     return (
       <div style={{ height: '100%' }}>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/login" component={LoginLayout} />
+        <Route exact path="/login" compconent={Login} />
+        <Route exact={false} path="/" component={Home} />
+        {
+          ROUTES.map(route => (
+            <Route
+              exact={getExactValue(route.exact)}
+              path={route.path}
+              component={route.component}
+            />
+          ))
+        }
       </div>
     );
-  }
-}
+};
 export default OpenRoutes;

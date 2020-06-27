@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { ROUTES_LINKS } from '../../../../pages/Home/Routes/Enums';
 
 import styles from './index.scss';
 
@@ -27,7 +29,9 @@ function Header({ title, name }) {
             <span className={styles.loader} /> :
             <img src={imageUrl} alt={name} className={styles.image} />
         }
-        <span className={styles.name}>{name}</span>
+        <Link to={`${ROUTES_LINKS.PROFILE}/ester_exposito`} className={styles.profileNav}>
+          <span className={styles.name}>{name}</span>
+        </Link>
       </div>
       <div className={styles.title}>
         {title}

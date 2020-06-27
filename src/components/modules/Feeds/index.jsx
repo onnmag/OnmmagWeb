@@ -35,15 +35,12 @@ function Feeds() {
             contentType={CONTENT_TYPE.IMAGE}
           />
         );
-        if (index === feeds.length - 1) {
-          return (
-            <div key={feed.id} className={styles.card} ref={lastFeedRef}>
-              {Card}
-            </div>
-          );
-        }
         return (
-          <div key={feed.id} className={styles.card}>
+          <div
+            key={feed.id}
+            className={styles.card}
+            ref={index === feeds.length - 1 ? lastFeedRef : null}
+          >
             {Card}
           </div>
         );

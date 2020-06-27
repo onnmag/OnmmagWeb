@@ -111,8 +111,8 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
         template: 'src/templates/react/index.ejs',
       }),
       new MiniCssExtractPlugin({
-        filename: 'styles-[hash].css',
-        chunkFilename: 'styles-[hash].css',
+        filename: 'styles-[name]-[hash].css',
+        chunkFilename: 'styles-[name]-[hash].css',
       }),
     ],
   },
