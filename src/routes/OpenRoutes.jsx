@@ -14,7 +14,7 @@ const OpenRoutes = () => {
     };
     return (
       <div style={{ height: '100%' }}>
-        <Route exact path="/login" compconent={Login} />
+        <Route exact path="/login" component={Login} />
         <Route exact={false} path="/" component={Home} />
         {
           ROUTES.map(route => (

@@ -10,7 +10,9 @@ function Home() {
     return (
         <div className={styles.container}>
           <NavBar />
-          <Routes />
+          <div className={styles.routes}>
+            <Routes />
+          </div>
         </div>
     );
 }

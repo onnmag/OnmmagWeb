@@ -1,0 +1,47 @@
+@import '../../../../../styles/main';
+
+.image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    .overlay {
+      display: flex;
+    }
+  }
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &::before {
+    height: 100%;
+    position: absolute;
+    content: '';
+    background-color: RGBA(var(--black), 0.5);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+}

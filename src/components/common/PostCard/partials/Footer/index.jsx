@@ -6,8 +6,10 @@ import ICONS_NAME from '../../../Icon/enum';
 
 import styles from './index.scss';
 
-function Footer() {
+function Footer({ id }) {
+  console.log({ id });
   return (
+
     <div className={styles.container}>
       <div className={styles.about}>
         <span>999 likes</span>

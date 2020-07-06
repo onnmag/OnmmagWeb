@@ -1,0 +1,74 @@
+@import '../../../../../styles/main';
+
+
+.coverContainer {
+  flex: 20vw;
+  height: 100%;
+
+  > *:first-child {
+    height: 50%;
+  }
+
+  > *:nth-child(2) {
+    height: 50%;
+    padding: 2rem;
+  }
+}
+
+.coverPhoto {
+  background-size: cover;
+  background-position: center;
+}
+
+.descriptionContainer {
+  background-color: RGBA(var(--black), .9);
+}
+
+.profileInfo {
+}
+
+.name {
+  @include typography(h2, bold);
+  color: RGBA(var(--white), .8);
+}
+
+.profileDetails {
+  margin-top: 1.5rem;
+}
+
+.postsCount, .subCount {
+  @include typography(h6, bold);
+  color: RGBA(var(--white), .8);
+}
+
+.postsCount {
+  margin-right: 1.5rem;
+}
+
+.info {
+  @include typography(h6);
+  color: RGBA(var(--manatee), .7);
+  margin-top: 2rem;
+
+}
+
+.personalInfoContainer {
+  margin-top: 2rem;
+}
+
+.personalInfo {
+  @include typography(h7);
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  > *:first-child {
+    color: RGBA(var(--white), .8);
+    margin-bottom: .5rem;
+  }
+
+  > *:nth-child(2) {
+    color: RGBA(var(--manatee), .7);
+  }
+}

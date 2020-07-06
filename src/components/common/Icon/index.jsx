@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
+
 import ICON_NAME, { ICON } from './enum';
 
 const ACTIVE_THEME = 'LIGHT';
@@ -37,4 +38,7 @@ Icon.defaultProps = {
   className: '',
 };
 
-export default Icon;
+export {
+  Icon as default,
+  ICON_NAME,
+};

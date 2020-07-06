@@ -25,6 +25,7 @@
   "author": "Onnmag",
   "license": "ISC",
   "dependencies": {
+    "approximate-number": "^2.0.0",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "file-loader": "^6.0.0",

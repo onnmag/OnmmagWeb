@@ -18,6 +18,8 @@ const ICONS_NAME = {
   SHARE: 'SHARE',
   MOVIES: 'MOVIES',
   ARTICLES: 'ARTICLES',
+  VERIFIED: 'VERIFIED',
+  COMMENT: 'COMMENT',
 };
 
 
@@ -31,10 +33,12 @@ const ICON = {
     [ICONS_NAME.NOTIFICATION]: 'fas fa-bell',
     [ICONS_NAME.MESSAGE]: 'fas fa-comments-alt',
     [ICONS_NAME.FRIENDS]: 'fas fa-users',
-    [ICONS_NAME.LIKE]: 'fas fa-thumbs-up',
+    [ICONS_NAME.LIKE]: 'fas fa-heart',
     [ICONS_NAME.SHARE]: 'fas fa-share-alt',
     [ICONS_NAME.MOVIES]: 'fal fa-film-alt',
     [ICONS_NAME.ARTICLES]: 'fal fa-file-alt',
+    [ICONS_NAME.VERIFIED]: 'fas fa-badge-check',
+    [ICONS_NAME.COMMENT]: 'fas fa-comment',
   },
   [THEME.DARK]: {
     [ICONS_NAME.HOME]: 'fal fa-home',
@@ -48,6 +52,8 @@ const ICON = {
     [ICONS_NAME.SHARE]: 'fas fa-share-alt',
     [ICONS_NAME.MOVIES]: 'fal fa-film-alt',
     [ICONS_NAME.ARTICLES]: 'fal fa-file-alt ',
+    [ICONS_NAME.VERIFIED]: 'fas fa-badge-check',
+    [ICONS_NAME.COMMENT]: 'fas fa-comment',
   },
 };
 

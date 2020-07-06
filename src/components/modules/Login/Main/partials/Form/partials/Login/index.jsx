@@ -13,6 +13,7 @@ function Login() {
   const history = useHistory();
   const email = useInputField({ type: INPUT_TYPES.EMAIL });
   const password = useInputField({ type: INPUT_TYPES.PASSWORD });
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
