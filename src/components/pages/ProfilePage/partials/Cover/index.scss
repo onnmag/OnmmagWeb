@@ -21,7 +21,7 @@
 }
 
 .descriptionContainer {
-  background-color: RGBA(var(--black), .9);
+  background-color: RGBA(var(--black-alpha), .9);
 }
 
 .profileInfo {
@@ -29,7 +29,7 @@
 
 .name {
   @include typography(h2, bold);
-  color: RGBA(var(--white), .8);
+  color: RGBA(var(--white-alpha), .8);
 }
 
 .profileDetails {
@@ -38,7 +38,7 @@
 
 .postsCount, .subCount {
   @include typography(h6, bold);
-  color: RGBA(var(--white), .8);
+  color: RGBA(var(--white-alpha), .8);
 }
 
 .postsCount {
@@ -47,7 +47,7 @@
 
 .info {
   @include typography(h6);
-  color: RGBA(var(--manatee), .7);
+  color: RGBA(var(--manatee-alpha), .7);
   margin-top: 2rem;
 
 }
@@ -64,11 +64,11 @@
   }
 
   > *:first-child {
-    color: RGBA(var(--white), .8);
+    color: RGBA(var(--white-alpha), .8);
     margin-bottom: .5rem;
   }
 
   > *:nth-child(2) {
-    color: RGBA(var(--manatee), .7);
+    color: RGBA(var(--manatee-alpha), .7);
   }
 }

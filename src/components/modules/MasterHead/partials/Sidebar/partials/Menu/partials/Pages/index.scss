@@ -9,11 +9,11 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: RGB(var(--zambezi));
+  color: var(--zambezi);
 
   &:hover {
-    background-color: RGB(var(--secondary-color));
-    color: RGB(var(--white));
+    background-color: var(--secondary-color);
+    color: var(--white);
   }
 }
 
@@ -24,13 +24,13 @@
 
 .active {
   @include typography(h6, semibold);
-  background-color: RGB(var(--primary-color));
-  color: RGB(var(--white));
+  background-color: var(--primary-color);
+  color: var(--white);
   cursor: default;
 
   &:hover {
-    background-color: RGB(var(--primary-color));
-    color: RGB(var(--white));
+    background-color: var(--primary-color);
+    color: var(--white);
   }
 }
 

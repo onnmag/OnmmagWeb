@@ -14,7 +14,7 @@
 .about {
   @include typography(h6, semibold);
   display: flex;
-  color: RGB(var(--dim-grey));
+  color: var(--dim-grey);
 
   > *:not(:last-child) {
     margin-right: 1rem;
@@ -23,7 +23,7 @@
 
 .controls {
   display: flex;
-  color: RGB(var(--manatee));
+  color: var(--manatee);
 
   > *:not(:last-child) {
     margin-right: 1rem;

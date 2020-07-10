@@ -2,7 +2,7 @@
 
 .container {
   display: flex;
-  color: RGB(var(--white));
+  color: var(--white);
 
   > * {
     cursor: pointer;

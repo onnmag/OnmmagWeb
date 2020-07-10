@@ -14,7 +14,7 @@
 
 .label {
   @include typography(h4);
-  color: RGB(var(--white));
+  color: var(--white);
   margin-right: 2rem;
   margin-bottom: 1rem;
 }
@@ -24,10 +24,10 @@
   outline: none;
   border-radius: 2rem;
   padding: .5rem;
-  color: RGBA(var(--black), .7);
+  color: RGBA(var(--black-alpha), .7);
   border: 3px solid transparent;
 
   &:focus {
-    border-color: RGB(var(--secondary-color));
+    border-color: var(--secondary-color);
   }
 }

@@ -8,7 +8,7 @@
   padding: 1rem;
   border-radius: 5rem;
   cursor: pointer;
-  background-color: RGB(var(--secondary-color));
-  color: RGB(var(--white));
+  background-color: var(--secondary-color);
+  color: var(--white);
   letter-spacing: 1px;
 }

@@ -3,7 +3,7 @@
 .container {
   position: relative;
   height: 100%;
-  background-color: RGB(var(--bg-color));
+  background-color: var(--bg-color);
 }
 
 .routes {

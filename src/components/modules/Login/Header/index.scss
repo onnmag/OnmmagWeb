@@ -2,11 +2,11 @@
 
 .container {
   @include typography(H2);
-  background-color: RGB(var(--primary-color));
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: RGB(var(--white));
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 2rem;
   padding: .5rem;

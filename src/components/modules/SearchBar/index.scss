@@ -15,14 +15,14 @@
   padding: 1rem 1rem 1rem 3.5rem;
   border-radius: 1rem;
   width: 25vw;
-  color: RGB(var(--manatee));
+  color: var(--manatee);
   &::placeholder {
-    color: RGBA(var(--manatee), .8);
+    color: RGBA(var(--manatee-alpha), .8);
   }
 }
 
 .icon {
   position: absolute;
   left: 1rem;
-  color: RGB(var(--manatee));
+  color: var(--manatee);
 }

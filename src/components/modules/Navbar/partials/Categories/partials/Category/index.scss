@@ -26,21 +26,21 @@
 }
 
 .home {
-  border-bottom-color: RGB(var(--purple));
-  color: RGB(var(--purple));
+  border-bottom-color: var(--purple);
+  color: var(--purple);
 }
 
 .music  {
-  border-bottom-color: RGB(var(--pink));
-  color: RGB(var(--pink));
+  border-bottom-color: var(--pink);
+  color: var(--pink);
 }
 
 .video {
-  border-bottom-color: RGB(var(--yellow));
-  color: RGB(var(--yellow));
+  border-bottom-color: var(--yellow);
+  color: var(--yellow);
 }
 
 .news {
-  border-bottom-color: RGB(var(--blue));
-  color: RGB(var(--blue));
+  border-bottom-color: var(--blue);
+  color: var(--blue);
 }

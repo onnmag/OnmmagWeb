@@ -32,7 +32,7 @@
 }
 
 .verifiedIcon {
-  color: RGB(var(--dim-grey));
+  color: var(--dim-grey);
 }
 
 
@@ -44,7 +44,7 @@
 
 .location {
   @include typography(h8, semibold);
-  color: RGB(var(--dim-grey));
+  color: var(--dim-grey);
 }
 
 .profilePicture {
@@ -67,8 +67,8 @@
 .button {
   border: none;
   outline: none;
-  color: RGB(var(--white));
-  background-color: RGB(var(--primary-color));
+  color: var(--white);
+  background-color: var(--primary-color);
   padding: .5rem 1rem;
   border-radius: 3px;
   cursor: pointer;

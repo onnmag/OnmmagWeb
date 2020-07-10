@@ -5,7 +5,7 @@ import useInputField from '../../../../../../../../hooks/useInputField';
 import { INPUT_LABELS, STATICS, BUTTON } from '../../../../enum';
 import { INPUT_TYPES } from '../../../../../../../../Enums/STATICS';
 import Input from '../Input';
-import Button from '../Button';
+import Button from '../../../../../../../common/Button';
 
 import styles from './index.scss';
 

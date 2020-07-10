@@ -12,7 +12,7 @@
 .signUpContainer {
   margin: 1rem;
   flex: .75 0 0;
-  background: RGB(var(--primary-color));
+  background: var(--primary-color);
 }
 
 .content {
@@ -24,18 +24,18 @@
 
 .header {
   @include typography(H1);
-  color: RGBA(var(--black), .8);
+  color: RGBA(var(--black-alpha), .8);
   margin-bottom: 4rem;
 }
 
 .subHeader {
   @include typography(H3);
-  color: RGBA(var(--black), .8);
+  color: RGBA(var(--black-alpha), .8);
   margin-bottom: 1rem;
 }
 
 .disclaimer {
   @include typography(h5);
-  color: RGBA(var(--black), .8);
+  color: RGBA(var(--black-alpha), .8);
   margin-bottom: 7rem;
 }

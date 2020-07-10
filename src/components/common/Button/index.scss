@@ -1,0 +1,48 @@
+@import '../../../styles/main';
+
+
+.btn {
+  padding: .5rem 1rem;
+  color: var(--manatee);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  position: relative;
+
+  &::after {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    &::after {
+      display: block;
+      background-color: RGBA(var(--black-alpha), .1);
+    }
+    &:active {
+      &::after {
+        display: block;
+        background-color: RGBA(var(--black-alpha), .15);
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: RGBA(var(--white-alpha), .12);
+    color: RGBA(var(--white-alpha), .3)
+  }
+}
+
+.btnPrimary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+

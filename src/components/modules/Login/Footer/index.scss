@@ -1,7 +1,7 @@
 @import '../../../../styles/main';
 
 .container {
-  background-color: RGB(var(--primary-color));
+  background-color: var(--primary-color);
   height: 5rem;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 
   > * {
-    color: RGB(var(--white));
+    color: var(--white);
     cursor: pointer;
 
     &:hover {

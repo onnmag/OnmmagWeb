@@ -5,7 +5,7 @@
 
 .label {
   @include typography(h6);
-  color: RGB(var(--white));
+  color: var(--white);
   margin-top: 1rem;
   text-align: center;
 
@@ -14,7 +14,7 @@
   }
 
   > *:nth-child(2) {
-    color: RGB(var(--secondary-color));
+    color: var(--secondary-color);
 
     &:hover {
       cursor: pointer;
@@ -35,7 +35,7 @@
 
   p {
     @include typography(h2, semibold);
-    color: RGB(var(--white));
+    color: var(--white);
     text-align: center;
   }
 }
@@ -47,7 +47,7 @@
 }
 
 .qrCode {
-  background-color: RGB(var(--white));
+  background-color: var(--white);
   border-radius: 5px;
   margin-top: 1.5rem;
 
@@ -59,7 +59,7 @@
 .qrheader, .qrDescription {
   @include typography(h6);
   margin: 1rem 0;
-  color: RGB(var(--white));
+  color: var(--white);
 }
 
 .qrDescription {
