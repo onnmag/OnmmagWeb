@@ -39,6 +39,7 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
         '@common': path.resolve(__dirname, 'src/components/common'),
         '@modules': path.resolve(__dirname, 'src/components/modules'),
         '@pages': path.resolve(__dirname, 'src/components/pages'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
       },
       extensions: ['.js', '.jsx'],
     },
@@ -80,6 +81,13 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
             'sass-loader',
           ],
         },
+        {
+          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+          loader: 'url-loader',
+          options: {
+            esModule: false,
+          }
+        },
       ],
     },
     /**
@@ -95,17 +103,16 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
         filename: '[name]-[hash].bundle.js',
       }),
       new HtmlWebpackPlugin({
-        title: 'Boiler Plate',
+        title: 'Onnmag',
         filename: 'index.html',
         inject: true,
         hash: true,
         xhtml: true,
         template: 'src/templates/react/index.ejs',
-        chunks: ['start', 'react'],
       }),
       new MiniCssExtractPlugin({
-        filename: 'evive-styles-[hash].css',
-        chunkFilename: 'evive-styles-[hash].css',
+        filename: 'styles-[name]-[hash].css',
+        chunkFilename: 'styles-[name]-[hash].css',
       }),
     ],
   },

@@ -3,7 +3,8 @@
  */
 
 const addNumbers = (a = 0, b = 0) => {
-  let num1 = a, num2 = b;
+  let num1 = a;
+  let num2 = b;
   if (Number.isNaN(num1)) {
     num1 = 0;
   }

@@ -1,0 +1,34 @@
+@import '../../../styles/main';
+
+$contentWidth: calc((55vw + 5vw) - 2rem);
+$column: 3;
+$gutter: 2rem;
+$row-size: calc((#{$contentWidth} - (#{$gutter} * (#{$column} - 1))) /#{$column});
+
+.container {
+  display: flex;
+  margin-left: 15vw;
+  height: 100%;
+}
+
+.wallContainer {
+  width: 65vw;
+  display: grid;
+  padding: 2rem;
+  overflow-y: auto;
+  grid-auto-columns: 55vw 15vw;
+}
+
+
+.latestPost {
+
+}
+
+.postContainer {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat($column, 1fr);
+  grid-auto-rows: $row-size;
+  grid-gap: 2rem;
+  place-items: stretch;
+}

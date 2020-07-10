@@ -1,0 +1,46 @@
+@import '../../../../../../../styles/main';
+
+.container {
+  padding-bottom: .2rem;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: width .5s;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+
+  > *:first-child {
+    margin-right: .5rem;
+  }
+}
+
+.displayName {
+  overflow: hidden;
+  transition: width .5s;
+}
+
+.activeCategory {
+  letter-spacing: 1px;
+}
+
+.home {
+  border-bottom-color: var(--purple);
+  color: var(--purple);
+}
+
+.music  {
+  border-bottom-color: var(--pink);
+  color: var(--pink);
+}
+
+.video {
+  border-bottom-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.news {
+  border-bottom-color: var(--blue);
+  color: var(--blue);
+}

@@ -1,0 +1,30 @@
+@import '../../../../../../styles/main';
+
+.feedSlide {
+  margin-top: 7rem;
+  height: 25rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.scroll {
+  height: 100%;
+  background-image: url('../../../../../../../statics/images/bg.png');
+  background-size: auto 100%;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  animation: scrollGrid 180s linear infinite;
+}
+
+@keyframes scrollGrid {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -2420px 0;
+  }
+}

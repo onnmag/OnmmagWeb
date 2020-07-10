@@ -1,0 +1,23 @@
+@import '../../../styles/main';
+
+.card {
+}
+
+.container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: scroll;
+
+
+  > * {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

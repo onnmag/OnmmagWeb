@@ -1,0 +1,9 @@
+@import '../../../styles/main';
+
+.container {
+  min-height: 70rem;
+  min-width: 60rem;
+  margin: auto;
+  border: 1px solid $primaryBorderColor;
+  border-radius: 4px;
+}

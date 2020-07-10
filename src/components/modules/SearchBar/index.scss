@@ -1,0 +1,28 @@
+
+@import '../../../styles/main';
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBox {
+  outline: none;
+  border: none;
+  background-color: var(--input-box);
+  padding: 1rem 1rem 1rem 3.5rem;
+  border-radius: 1rem;
+  width: 25vw;
+  color: var(--manatee);
+  &::placeholder {
+    color: RGBA(var(--manatee-alpha), .8);
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--manatee);
+}

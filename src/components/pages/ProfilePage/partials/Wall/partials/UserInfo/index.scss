@@ -1,0 +1,75 @@
+@import '../../../../../../../styles/main';
+
+
+.contentContainer {
+  display: flex;
+
+  > *:first-child, > *:nth-child(2) {
+    flex: 1 1 0;
+  }
+}
+
+.userInfoContainer {
+  display: flex;
+
+  > *:first-child {
+    display: flex;
+    flex: 1 0 0;
+  }
+}
+
+.userInfo {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  > *:first-child {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.verifiedIcon {
+  color: var(--dim-grey);
+}
+
+
+.userName {
+  @include typography(h5, semibold);
+  margin-right: .5rem;
+  margin-bottom: .3rem;
+}
+
+.location {
+  @include typography(h8, semibold);
+  color: var(--dim-grey);
+}
+
+.profilePicture {
+  img {
+    height: 50px;
+    border-radius: 50%;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.postMessage {
+
+}
+
+.button {
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding: .5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+@import '../../../styles/main';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > *:first-child {
+    flex: 0 0 auto;
+  }
+
+  > *:nth-child(2) {
+    flex: 1 0 auto;
+  }
+
+  > *:nth-child(3) {
+    flex: 0 0 auto;
+  }
+}

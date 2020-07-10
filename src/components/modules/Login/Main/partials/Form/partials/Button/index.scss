@@ -1,0 +1,14 @@
+@import '../../../../../../../../styles/main';
+
+.btn {
+  @include typography(h5);
+  outline: none;
+  border: none;
+  min-width: 10rem;
+  padding: 1rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  letter-spacing: 1px;
+}

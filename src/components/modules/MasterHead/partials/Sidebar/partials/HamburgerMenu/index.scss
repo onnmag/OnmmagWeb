@@ -1,0 +1,75 @@
+@import '../../../../../../../styles/main';
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  display: none;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.inActive {
+  &:hover {
+    .icon {
+      &::before {
+        top: -.6rem;
+      }
+
+      &::after {
+        top: .6rem;
+      }
+    }
+  }
+}
+
+.icon {
+  position: relative;
+  &, &::before, &::after {
+    width: 2rem;
+    height: .2rem;
+    background-color: var(--white)3;
+  }
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    transition: all .2s;
+  }
+  &::before {
+    top: -.5rem;
+  }
+
+  &::after {
+    top: .5rem;
+  }
+
+  &:hover {
+
+  }
+}
+
+.isActive {
+  background-color: transparent;
+  &::before, &::after {
+    top: 0;
+  }
+  &::before {
+    transform: rotate(135deg);
+  }
+  &::after {
+    transform: rotate(-135deg);
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../../../styles/main';
+
+.container {
+  background-color: var(--primary-color);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  > * {
+    color: var(--white);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+}
