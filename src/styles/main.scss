@@ -1,6 +1,7 @@
 
 // Variables
 @import './typography/typography';
+@import './mixins/mediaQuery';
 
 $primaryBorderColor: var(--primary-border-color);
 

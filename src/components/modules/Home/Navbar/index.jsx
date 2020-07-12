@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Navigation from './partials/Navigation';
-import SearchBar from '../SearchBar';
-import MasterHeader from '../MasterHead';
+import SearchBar from '../../SearchBar';
+import MasterHeader from '../../MasterHead';
 
 import styles from './index.scss';
 
