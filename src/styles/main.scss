@@ -1,7 +1,9 @@
 
-// Variables
 @import './typography/typography';
 @import './mixins/mediaQuery';
+
+// Variables
+$navBarHeight: 5.7rem;
 
 $primaryBorderColor: var(--primary-border-color);
 

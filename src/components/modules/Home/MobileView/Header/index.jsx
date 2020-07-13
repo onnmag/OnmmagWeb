@@ -7,7 +7,7 @@ import styles from './index.scss';
 
 function Header() {
   return (
-    <div>
+    <div className={styles.container}>
       <Logo />
       <Avatar />
     </div>

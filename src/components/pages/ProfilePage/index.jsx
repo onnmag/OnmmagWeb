@@ -5,6 +5,9 @@ import Wall from './partials/Wall';
 import Post from './partials/Post';
 
 import { MOCK } from '../../../mocks';
+
+import { mediaQuery } from '../../../utils';
+
 import styles from './index.scss';
 
 function ProfilePage() {
@@ -44,7 +47,7 @@ function ProfilePage() {
     const { description, wall, posts } = profileData;
     return (
       <section className={styles.container}>
-        <Cover data={description} />
+        {!mediaQuery(600) && <Cover data={description} />}
         <div className={styles.wallContainer}>
           <Wall data={wall} isVerified={description.isVerified} name={description.name} />
           <section className={styles.postContainer}>

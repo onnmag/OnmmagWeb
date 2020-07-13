@@ -24,7 +24,7 @@ function Post({ title }) {
       {
         isLoading && !isImageLoaded ?
           <span className={styles.loader} /> :
-          <img src={imageUrl} alt={title} />
+          <img src={imageUrl} alt={title} className={styles.image} />
       }
     </figure>
   );

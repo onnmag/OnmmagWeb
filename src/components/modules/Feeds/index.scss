@@ -1,8 +1,5 @@
 @import '../../../styles/main';
 
-.card {
-}
-
 .container {
   padding: 1rem;
   display: flex;
@@ -19,5 +16,20 @@
 
   > *:not(:last-child) {
     margin-bottom: 2rem;
+  }
+}
+
+@include respond(phone) {
+  .container {
+    overflow: initial;
+    padding: 0;
+
+    > * {
+      margin-right: initial;
+      margin-left: initial;
+    }
+  }
+  .card {
+    width: 100%;
   }
 }
