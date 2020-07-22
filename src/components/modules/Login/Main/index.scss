@@ -1,7 +1,8 @@
 @import '../../../../styles/main';
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 .contentSlider {
@@ -11,7 +12,6 @@
 
 .signUpContainer {
   margin: 1rem;
-  flex: .75 0 0;
   background: var(--primary-color);
 }
 
@@ -38,4 +38,18 @@
   @include typography(h5);
   color: RGBA(var(--black-alpha), .8);
   margin-bottom: 7rem;
+}
+
+@include respond(phone) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .contentSlider {
+    display: none;
+  }
+
+  .signUpContainer {
+    margin: 1px 0;
+  }
 }

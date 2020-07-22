@@ -9,3 +9,9 @@
   width: 60rem;
   background-color: RGBA(var(--manatee-alpha), .5);
 }
+
+@include respond(phone) {
+  .image {
+    width: 100%;
+  }
+}

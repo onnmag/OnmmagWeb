@@ -23,7 +23,8 @@ function useFetchFeeds({ pageNumber }) {
           ...prevFeeds,
           ...res.data,
         ]));
-        setHasMore(res.data.length > 0);
+        setHasMore(false);
+        // setHasMore(res.data.length > 0);
         setIsLoading(false);
     }).catch(e => {
       if (axios.isCancel(e)) return;

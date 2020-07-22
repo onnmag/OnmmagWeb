@@ -1,9 +1,21 @@
 @import '../../../styles/main';
 
 .container {
+  background-color: var(--white);
   min-height: 70rem;
   min-width: 60rem;
   margin: auto;
-  border: 1px solid $primaryBorderColor;
   border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.2),
+              0px 1px 1px 0px rgba(0,0,0,0.14),
+              0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+@include respond(phone) {
+  .container {
+    margin: initial;
+    min-height: 40rem;
+    min-width: 100%;
+    border-radius: 0;
+  }
 }

@@ -9,7 +9,7 @@ function LatestPost({ data }) {
   });
   return (
     <div className={styles.postMessage}>
-      <p>{data.header}</p>
+      <p className={styles.header}>{data.header}</p>
       <figure className={styles.post}>
         <div style={getImage()} />
       </figure>

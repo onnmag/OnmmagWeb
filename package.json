@@ -25,6 +25,7 @@
   "author": "Onnmag",
   "license": "ISC",
   "dependencies": {
+    "add": "^2.0.6",
     "approximate-number": "^2.0.0",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
@@ -36,10 +37,12 @@
     "random-name": "^0.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.2",
+    "react-icons": "^3.10.0",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.2",
     "url-loader": "^4.1.0",
-    "webpack-merge": "^4.2.1"
+    "webpack-merge": "^4.2.1",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "@types/jest": "^22.2.3",

@@ -21,7 +21,6 @@ html {
 html,body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 // 54, 57, 63
@@ -35,9 +34,9 @@ a, a:visited, a:hover {
 }
 
 [data-theme='light'] {
+  // USAGE:- background-color: var(--primary-color)
   --bg-linear-gradient: linear-gradient(45deg, rgb(149, 124, 156), rgb(101, 107, 169));
-  --primary-color:rgb( 93, 185, 181);
-  //--primary-color: 103,109,171;
+  --primary-color:rgb(83, 96, 109);
   --secondary-color: rgb(232, 193, 185);
   --white: rgb(255, 255, 255);
   --bg-color: rgb(250, 250, 250);
@@ -52,8 +51,8 @@ a, a:visited, a:hover {
   --dim-grey: rgb(105, 105, 105); // like comment text
   --zambezi: rgb(3, 3, 3); // Menu icon, text
 
+  // USAGE:- background-color: RGBA(var(--primary-color), .5)
   --primary-color-alpha: 93, 185, 181;
-  //--primary-color: 103,109,171;
   --secondary-color-alpha: 232, 193, 185;
   --white-alpha: 255, 255, 255;
   --bg-color-alpha: 250, 250, 250;
@@ -67,39 +66,49 @@ a, a:visited, a:hover {
   --black-alpha: 0, 0, 0;
   --dim-grey-alpha: 105, 105, 105; // like comment text
   --zambezi-alpha: 3, 3, 3; // Menu icon, text
-}
 
-[data-theme='dark'] {
-  --bg-linear-gradient: linear-gradient(45deg, rgb(149, 124, 156), rgb(101, 107, 169));
-  --primary-color: 93, 185, 181;
-  //--primary-color: 103,109,171;
-  --secondary-color: 232, 193, 185;
-  --white: 255, 255, 255;
-  --bg-color: 250, 250, 250;
-  --primary-border-color: #dbdbdb;
-  --input-box: #F4F5F8;
-  --manatee: 142, 148, 157; // input-text, notification
-  --purple: 91, 55,183;
-  --blue: 24, 138,174;
-  --yellow: 230, 169, 25;
-  --pink: 201, 55, 157;
-  --black: 0, 0, 0;
-  --dim-grey: 105, 105, 105; // like comment text
-  --zambezi: 3, 3, 3; // Menu icon, text
+  // BOX-SHADOWS
+  --elevation-1:  0px 2px 4px -1px rgba(0,0,0,0.2),
+                  0px 4px 5px 0px rgba(0,0,0,0.14),
+                  0px 1px 10px 0px rgba(0,0,0,0.12);
 
-  --primary-color-alpha: 93, 185, 181;
-  //--primary-color: 103,109,171;
-  --secondary-color-alpha: 232, 193, 185;
-  --white-alpha: 255, 255, 255;
-  --bg-color-alpha: 250, 250, 250;
-  --primary-border-color-alpha: #dbdbdb;
-  --input-box-alpha: #F4F5F8;
-  --manatee-alpha: 142, 148, 157; // input-text, notification
-  --purple-alpha: 91, 55,183;
-  --blue-alpha: 24, 138,174;
-  --yellow-alpha: 230, 169, 25;
-  --pink-alpha: 201, 55, 157;
-  --black-alpha: 0, 0, 0;
-  --dim-grey-alpha: 105, 105, 105; // like comment text
-  --zambezi-alpha: 3, 3, 3; // Menu icon, text
+  --elevation-2:  0 2px 1px -1px rgba(0,0,0,0.2),
+                  0px 1px 1px 0px rgba(0,0,0,0.14),
+                  0px 1px 3px 0px rgba(0,0,0,0.12);
+
 }
+//
+//[data-theme='dark'] {
+//  --bg-linear-gradient: linear-gradient(45deg, rgb(149, 124, 156), rgb(101, 107, 169));
+//  --primary-color: 93, 185, 181;
+//  //--primary-color: 103,109,171;
+//  --secondary-color: 232, 193, 185;
+//  --white: 255, 255, 255;
+//  --bg-color: 250, 250, 250;
+//  --primary-border-color: #dbdbdb;
+//  --input-box: #F4F5F8;
+//  --manatee: 142, 148, 157; // input-text, notification
+//  --purple: 91, 55,183;
+//  --blue: 24, 138,174;
+//  --yellow: 230, 169, 25;
+//  --pink: 201, 55, 157;
+//  --black: 0, 0, 0;
+//  --dim-grey: 105, 105, 105; // like comment text
+//  --zambezi: 3, 3, 3; // Menu icon, text
+//
+//  --primary-color-alpha: 93, 185, 181;
+//  //--primary-color: 103,109,171;
+//  --secondary-color-alpha: 232, 193, 185;
+//  --white-alpha: 255, 255, 255;
+//  --bg-color-alpha: 250, 250, 250;
+//  --primary-border-color-alpha: #dbdbdb;
+//  --input-box-alpha: #F4F5F8;
+//  --manatee-alpha: 142, 148, 157; // input-text, notification
+//  --purple-alpha: 91, 55,183;
+//  --blue-alpha: 24, 138,174;
+//  --yellow-alpha: 230, 169, 25;
+//  --pink-alpha: 201, 55, 157;
+//  --black-alpha: 0, 0, 0;
+//  --dim-grey-alpha: 105, 105, 105; // like comment text
+//  --zambezi-alpha: 3, 3, 3; // Menu icon, text
+//}

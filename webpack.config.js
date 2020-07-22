@@ -39,7 +39,6 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
         '@common': path.resolve(__dirname, 'src/components/common'),
         '@modules': path.resolve(__dirname, 'src/components/modules'),
         '@pages': path.resolve(__dirname, 'src/components/pages'),
-        '@utils': path.resolve(__dirname, 'src/utils'),
       },
       extensions: ['.js', '.jsx'],
     },

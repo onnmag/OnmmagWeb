@@ -21,8 +21,7 @@
         "map": [
           ["@common", "./src/components/common"],
           ["@pages", "./src/components/pages"],
-          ["@modules", "./src/components/modules"],
-          ["@utils", "./src/utils"]
+          ["@modules", "./src/components/modules"]
         ]
       }
     }
