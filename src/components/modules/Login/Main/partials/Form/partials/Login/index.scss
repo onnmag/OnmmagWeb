@@ -6,7 +6,7 @@
 .label {
   @include typography(h6);
   color: var(--white);
-  margin-top: 1rem;
+  margin-top: 2rem;
   text-align: center;
 
   > *:first-child {
@@ -25,39 +25,91 @@
 
 
 .btnContainer {
-  margin-top: 1.5rem;
+  margin-top: 2em;
   display: flex;
   justify-content: center;
+
+  > button {
+    width: 23rem;
+    height: 4.6rem;
+  }
+}
+
+.signUp {
+  @include typography(p2);
+
+  > a {
+    color: var(--primary-color);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .header {
-  margin-top: 1.5rem;
 
-  p {
-    @include typography(h2, semibold);
+  > p:first-child {
+    @include typography(h2);
     color: var(--white);
-    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  > p:nth-child(2) {
+    @include typography(p1);
+    color: var(--white);
+  }
+}
+
+.forgotPassword {
+  @include typography(p1, semibold);
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+
+  > * {
+    color: var(--primary-color);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 .qrCodeContainer {
+  margin-top: 3rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  border-top: 1px solid var(--white);
+  padding-top: 3rem;
 }
 
 .qrCode {
   background-color: var(--white);
   border-radius: 5px;
-  margin-top: 1.5rem;
+  margin-right: 1.5rem;
 
   img {
-    height: 15rem;
+    height: 8.4rem;
   }
 }
 
-.qrheader, .qrDescription {
-  @include typography(h6);
+.qrText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.qrHeader {
+  @include typography(p1, bold);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.qrDescription {
+  @include typography(p2);
   margin: 1rem 0;
   color: var(--white);
 }

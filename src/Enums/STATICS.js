@@ -1,6 +1,6 @@
 const STATICS = {
   INPUT_PLACEHOLDER: 'Quick Access',
-  ONNMAG: 'onnmag',
+  ONNMAG: 'OnnMag',
 };
 
 const CONTENT_TYPE = {

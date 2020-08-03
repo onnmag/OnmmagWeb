@@ -13,19 +13,20 @@
 }
 
 .label {
-  @include typography(h4);
+  @include typography(p1, bold);
   color: var(--white);
   margin-right: 2rem;
   margin-bottom: 1rem;
 }
 
 .input {
-  width: 35rem;
+  @include typography(input);
+  width: 100%;
   outline: none;
-  border-radius: 2rem;
-  padding: .5rem;
-  color: RGBA(var(--black-alpha), .7);
+  border-radius: .5rem;
+  color: var(--grey-1);
   border: 3px solid transparent;
+  padding: .5rem 1rem;
 
   &:focus {
     border-color: var(--secondary-color);

@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
 import OpenRoutes from './routes/OpenRoutes';
+import AuthProvider from './core/authProvider';
 import { SIDEBAR } from './mocks';
 
 import './styles/app.scss';
@@ -17,15 +18,17 @@ function App() {
   }, []);
 
   return (
-    <AppContext.Provider value={{
-      activePage,
-      setActivePage,
-    }}
-    >
-      <BrowserRouter>
-        <OpenRoutes />
-      </BrowserRouter>
-    </AppContext.Provider>
+    <BrowserRouter>
+      <AuthProvider>
+        <AppContext.Provider value={{
+          activePage,
+          setActivePage,
+        }}
+        >
+            <OpenRoutes />
+        </AppContext.Provider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

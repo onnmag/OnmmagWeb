@@ -1,23 +1,24 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import useInputField from '../../../../../../../../hooks/useInputField';
-import { INPUT_LABELS, STATICS, BUTTON } from '../../../../enum';
+import { INPUT_LABELS, STATICS, BUTTON, INPUT_PLACEHOLDERS } from '../../../../enum';
 import { INPUT_TYPES } from '../../../../../../../../Enums/STATICS';
 import Input from '../Input';
 import Button from '../../../../../../../common/Button';
+import { useAuth } from '../../../../../../../../core/authProvider';
 
 import styles from './index.scss';
 
 function Login() {
-  const history = useHistory();
+  const { logIn } = useAuth();
   const email = useInputField({ type: INPUT_TYPES.EMAIL });
   const password = useInputField({ type: INPUT_TYPES.PASSWORD });
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <p>{STATICS.WELCOME_BACK}</p>
+        <p>{STATICS.LOG_IN}</p>
+        <p>{STATICS.DESCRIPTION}</p>
       </div>
       <Input
         label={INPUT_LABELS.EMAIL}
@@ -26,6 +27,7 @@ function Login() {
         isValid={email.isValid}
         onBlur={email.handleOnBlur}
         type="input"
+        placeholder={INPUT_PLACEHOLDERS.EMAIL}
       />
 
       <Input
@@ -37,29 +39,31 @@ function Login() {
         type="password"
       />
 
+      <div className={styles.forgotPassword}>
+        <a>{STATICS.FORGOT_PASSWORD}</a>
+      </div>
+
       <div className={styles.btnContainer}>
-        <Button onClick={() => { history.push('/home'); }}>
+        <Button onClick={logIn}>
           {BUTTON.LOGIN}
         </Button>
       </div>
       <div className={styles.label}>
-        <span>{STATICS.NEED_AN_ACCOUNT}</span>
-      </div>
-
-      <div className={styles.btnContainer}>
-        <Button onClick={() => {}}>
-          {BUTTON.SIGN_UP}
-        </Button>
+        <span className={styles.signUp}>
+          {'Not a member yet? '}
+          <a>{BUTTON.SIGN_UP}</a>
+          {' here'}
+        </span>
       </div>
 
       <div className={styles.qrCodeContainer}>
         <div className={styles.qrCode}>
           <img src="https://pngimg.com/uploads/qr_code/qr_code_PNG26.png" alt="qrCode" />
         </div>
-        <p className={styles.qrheader}>Log in with QR Code</p>
-        <p className={styles.qrDescription}>Scan this with the ONNMAG App
-          to log in instantly.
-        </p>
+        <div className={styles.qrText}>
+          <p className={styles.qrHeader}>{STATICS.QR_CODE_HEADER}</p>
+          <p className={styles.qrDescription}>{STATICS.QR_DESCRIPTION}</p>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,9 @@
 @import '../../../styles/main';
 
 .container {
+  background-color: var(--lavender-blush);
   height: 100%;
   display: grid;
   grid-template-rows: 5.5rem 1fr 3rem;
+  grid-row-gap: 5.5rem;
 }

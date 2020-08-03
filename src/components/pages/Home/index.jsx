@@ -3,6 +3,7 @@ import React from 'react';
 import { mediaQuery } from '../../../utils';
 
 import NavBar from '../../modules/Home/Navbar';
+import SideBar from '../../modules/Sidebar';
 import { MobileHeader, MobileNavBar } from '../../modules/Home/MobileView';
 
 
@@ -24,6 +25,7 @@ function Home() {
   return (
     <div className={styles.container}>
       <NavBar />
+      <SideBar />
       <div className={styles.routes}>
         <Routes />
       </div>

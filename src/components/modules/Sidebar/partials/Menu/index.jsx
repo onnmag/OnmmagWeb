@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Pages from './partials/Pages';
+import Pages from '../Pages';
 
 function Menu() {
   return (

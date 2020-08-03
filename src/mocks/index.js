@@ -1,59 +1,51 @@
+import { ROUTES_LINKS, ROUTES_NAME } from '../components/pages/Home/Routes/Enums';
+
 const SIDEBAR = {
   PAGES: [{
-    id: 'home',
+    id: ROUTES_NAME.HOME,
     displayName: 'Home',
     icon: 'HOME',
-    link: '/',
+    link: ROUTES_LINKS[ROUTES_NAME.FEEDS],
   }, {
-    id: 'hallOfFame',
-    displayName: 'Hall of fame',
-    icon: 'MUSIC',
-    link: '/hallOfFrame',
-  }, {
-    id: 'videos',
+    id: ROUTES_NAME.VIDEOS,
     displayName: 'Videos',
     icon: 'VIDEO',
-    link: '/videos',
+    link: ROUTES_LINKS[ROUTES_NAME.VIDEOS],
   }, {
-    id: 'music',
+    id: ROUTES_NAME.MUSIC,
     displayName: 'Music',
     icon: 'MUSIC',
-    link: '/music',
+    link: ROUTES_LINKS[ROUTES_NAME.MUSIC],
   }, {
-    id: 'movies',
+    id: ROUTES_NAME.MOVIES,
     displayName: 'Movies',
     icon: 'MOVIES',
-    link: '/movies',
+    link: ROUTES_LINKS[ROUTES_NAME.MOVIES],
   }, {
-    id: 'webSeries',
+    id: ROUTES_NAME.WEB_SERIES,
     displayName: 'Web Series',
     icon: 'MOVIES',
-    link: '/webSeries',
+    link: ROUTES_LINKS[ROUTES_NAME.WEB_SERIES],
   }, {
-    id: 'news',
+    id: ROUTES_NAME.NEWS,
     displayName: 'News',
     icon: 'NEWS',
-    link: '/news',
+    link: ROUTES_LINKS[ROUTES_NAME.NEWS],
   }, {
-    id: 'blogs',
+    id: ROUTES_NAME.BLOGS,
     displayName: 'Blogs',
     icon: 'ARTICLES',
-    link: '/blogs',
+    link: ROUTES_LINKS[ROUTES_NAME.BLOGS],
   }, {
-    id: 'twitter',
+    id: ROUTES_NAME.TWITTER,
     displayName: 'Twitter',
     icon: 'ARTICLES',
-    link: '/twitter',
+    link: ROUTES_LINKS[ROUTES_NAME.TWITTER],
   }, {
-    id: 'poll',
+    id: ROUTES_NAME.POLL,
     displayName: 'Poll',
     icon: 'ARTICLES',
-    link: '/poll',
-  }, {
-    id: 'recycleAndReuse',
-    displayName: 'Recycle and Reuse',
-    icon: 'ARTICLES',
-    link: '/recycle-and-reuse',
+    link: ROUTES_LINKS[ROUTES_NAME.POLL],
   }],
 };
 
