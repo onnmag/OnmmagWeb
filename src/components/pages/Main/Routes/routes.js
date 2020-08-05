@@ -77,7 +77,7 @@ const ROUTES = [{
   }),
 }, {
   id: ROUTES_NAME.HOME,
-  path: ROUTES_LINKS.FEEDS,
+  path: ROUTES_LINKS.HOME,
   component: Loadable({
     loader: () => import('../../Home'),
     loading: DefaultLoader,

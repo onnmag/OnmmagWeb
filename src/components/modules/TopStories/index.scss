@@ -20,3 +20,18 @@
     margin-right: 4rem;
   }
 }
+
+@include respond(phone) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cardsContainer {
+    flex-direction: column;
+
+    > *:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}

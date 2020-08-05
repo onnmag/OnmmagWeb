@@ -14,9 +14,14 @@ function Footer({ id, handleComment }) {
         <span> 30 comments</span>
       </div>
       <div className={styles.controls}>
-        <Icon name={ICONS_NAME.LIKE} size={4} />
-        <Icon name={ICONS_NAME.MESSAGE} size={4} onClick={handleComment} />
-        <Icon name={ICONS_NAME.SHARE} size={4} />
+        <Icon name={ICONS_NAME.LIKE} size={4} className={styles.action} />
+        <Icon
+          name={ICONS_NAME.MESSAGE}
+          size={4}
+          onClick={handleComment}
+          className={styles.action}
+        />
+        <Icon name={ICONS_NAME.SHARE} size={4} className={styles.action} />
       </div>
     </div>
   );

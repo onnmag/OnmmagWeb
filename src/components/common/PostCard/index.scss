@@ -4,11 +4,9 @@
   min-height: 70rem;
   min-width: 60rem;
   margin: auto;
-  //border-radius: 4rem 4rem 3rem 3rem;
   border-radius: 1rem;
   position: relative;
   z-index: 1;
-  //border: 1px solid var(--grey-5);
   box-shadow: 0 2px 20px -1px transparent;
   padding: 1rem;
 }
@@ -34,14 +32,20 @@
 
   input {
     border-radius: 1.5rem;
+    color: var(--grey-2);
   }
 }
 
 @include respond(phone) {
   .container {
-    margin: initial;
     min-height: 40rem;
-    min-width: 100%;
+    min-width: 95%;
     border-radius: 0;
+    padding: .5rem;
+    margin: .5rem;
+  }
+
+  .controls {
+    padding: 0 .5rem;
   }
 }

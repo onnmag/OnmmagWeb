@@ -41,3 +41,9 @@
   @include typography(p1);
   color: var(--grey-1);
 }
+
+@include respond(phone) {
+  .container {
+    padding: .5rem;
+  }
+}
