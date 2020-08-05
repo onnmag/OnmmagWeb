@@ -76,18 +76,18 @@ const ROUTES = [{
     loading: DefaultLoader,
   }),
 }, {
+  id: ROUTES_NAME.HOME,
+  path: ROUTES_LINKS.FEEDS,
+  component: Loadable({
+    loader: () => import('../../Home'),
+    loading: DefaultLoader,
+  }),
+}, {
   id: ROUTES_NAME.PROFILE,
   path: ROUTES_LINKS.PROFILE,
   exact: false,
   component: Loadable({
     loader: () => import('../../ProfilePage'),
-    loading: DefaultLoader,
-  }),
-}, {
-  id: ROUTES_NAME.FEEDS,
-  path: ROUTES_LINKS.FEEDS,
-  component: Loadable({
-    loader: () => import('../../../modules/Feeds'),
     loading: DefaultLoader,
   }),
 }];

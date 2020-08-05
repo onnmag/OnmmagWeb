@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 import { useAppState } from '../../../../../App';
-import { ROUTES_NAME } from '../../../../pages/Home/Routes/Enums';
+import { ROUTES_NAME } from '../../../../pages/Main/Routes/Enums';
 
 import styles from './index.scss';
 

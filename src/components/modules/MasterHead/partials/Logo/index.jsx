@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTES_LINKS, ROUTES_NAME } from '../../../../pages/Home/Routes/Enums';
+import { ROUTES_LINKS, ROUTES_NAME } from '../../../../pages/Main/Routes/Enums';
 
 import styles from './index.scss';
 
 function Logo() {
   return (
-    <Link to={ROUTES_LINKS[ROUTES_NAME.FEEDS]} className={styles.link}>
+    <Link to={ROUTES_LINKS[ROUTES_NAME.HOME]} className={styles.link}>
       <div className={styles.container}>
         <img
           className={styles.logo}

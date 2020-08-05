@@ -1,13 +1,11 @@
 @import '../../../styles/main';
 
 .container {
+  height: 100%;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
-  overflow: scroll;
-
 
   > * {
     margin-right: auto;
@@ -15,7 +13,7 @@
   }
 
   > *:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 }
 

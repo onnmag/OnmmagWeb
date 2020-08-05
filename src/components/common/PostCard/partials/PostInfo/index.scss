@@ -1,13 +1,23 @@
 @import '../../../../../styles/main';
 
 .container {
-  padding: .5rem 1rem;
+  padding: .5rem 2rem;
 }
 
 .about {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  @include typography(p2);
+  color: var(--grey-3);
 }
 
 .loader {
@@ -22,14 +32,12 @@
 }
 
 .name {
-  @include typography(h6, semibold);
+  @include typography(p1, bold);
+  color: var(--grey-1);
   align-items: center;
 }
 
 .title {
-  @include typography(h6);
-}
-
-.profileNav {
-  color: var(--zambezi);
+  @include typography(p1);
+  color: var(--grey-1);
 }

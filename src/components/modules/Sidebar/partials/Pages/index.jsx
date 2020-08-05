@@ -8,7 +8,7 @@ import { useAppState } from '../../../../../App';
 import Icon from '../../../../common/Icon';
 
 import styles from './index.scss';
-import { ROUTES_NAME } from '../../../../pages/Home/Routes/Enums';
+import { ROUTES_NAME } from '../../../../pages/Main/Routes/Enums';
 
 function Pages() {
   const { setActivePage, activePage } = useAppState();

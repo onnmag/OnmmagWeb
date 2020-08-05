@@ -1,5 +1,17 @@
 
 .container {
   background-color: var(--grey-6);
-  min-width: 35rem;
+  //min-width: 35rem;
+  animation-name: slide-in;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 35rem;
+  }
 }

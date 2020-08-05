@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
-import { Header, Post, Footer } from './partials/index';
+import { PostInfo, Post, Footer } from './partials/index';
 
 import styles from './index.scss';
+import CommentBox from '../CommentBox';
 
 function PostCard({ name, title, contentType, profileImage, content, id }) {
+  const [isCommentSectionActive, setCommentSectionStatus] = useState(false);
+
+  const handleComment = () => {
+    console.log('entered');
+    setCommentSectionStatus((prevState) => !prevState);
+  };
+
   return (
-    <div className={styles.container}>
-      <Header
+    <div className={cx(styles.container, {
+      [styles.raiseCard]: isCommentSectionActive,
+    })}
+    >
+      <PostInfo
         name={name}
         profileImage={profileImage}
         title={title}
@@ -17,9 +29,16 @@ function PostCard({ name, title, contentType, profileImage, content, id }) {
         type={contentType}
         content={content}
       />
-      <Footer
-        id={id}
-      />
+      <div className={cx(styles.controls, {
+        [styles.animateCommentBox]: isCommentSectionActive,
+      })}
+      >
+        <Footer
+          id={id}
+          handleComment={handleComment}
+        />
+        {isCommentSectionActive && <CommentBox id={id} className={styles.commentBox} />}
+      </div>
     </div>
   );
 }

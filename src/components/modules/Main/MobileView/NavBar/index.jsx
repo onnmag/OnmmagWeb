@@ -2,14 +2,14 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import cx from 'classnames';
 
-import { ROUTES_NAME, ROUTES_LINKS } from '../../../../pages/Home/Routes/Enums';
+import { ROUTES_NAME, ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
 import Icon, { ICON_NAME } from '../../../../common/Icon';
 
 import styles from './index.scss';
 
 const NAV_CONFIG = [{
   icon: ICON_NAME.HOME,
-  link: ROUTES_LINKS[ROUTES_NAME.FEEDS],
+  link: ROUTES_LINKS[ROUTES_NAME.HOME],
 }, {
   icon: ICON_NAME.MESSAGE,
   link: ROUTES_LINKS[ROUTES_NAME.PROFILE],

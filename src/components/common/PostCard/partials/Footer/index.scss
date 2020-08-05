@@ -3,7 +3,8 @@
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
 }
 
 .image {
@@ -12,9 +13,10 @@
 }
 
 .about {
-  @include typography(h6, semibold);
+  cursor: pointer;
+  @include typography(p2, bold);
   display: flex;
-  color: var(--dim-grey);
+  color: var(--grey-1);
 
   > *:not(:last-child) {
     margin-right: 1rem;

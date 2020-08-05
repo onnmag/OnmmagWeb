@@ -9,7 +9,7 @@ import styles from './index..scss';
 const CATEGORIES = [{
   id: 'home',
   icon: ICON_NAME.HOME,
-  displayName: 'Home',
+  displayName: 'Main',
 }, {
   id: 'news',
   icon: ICON_NAME.NEWS,

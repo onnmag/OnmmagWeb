@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ROUTES_LINKS } from '../../../../pages/Home/Routes/Enums';
+import { ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
 
 import styles from './index.scss';
 
-function Header({ title, name }) {
+function PostInfo({ title, name }) {
   const [imageUrl, setImageUrl] = useState('');
   const [isImageLoaded, setImageLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,9 +29,12 @@ function Header({ title, name }) {
             <span className={styles.loader} /> :
             <img src={imageUrl} alt={name} className={styles.image} />
         }
-        <Link to={`${ROUTES_LINKS.PROFILE}/ester_exposito`} className={styles.profileNav}>
-          <span className={styles.name}>{name}</span>
-        </Link>
+        <div className={styles.postInfo}>
+          <Link to={`${ROUTES_LINKS.PROFILE}/ester_exposito`}>
+            <span className={styles.name}>{name}</span>
+          </Link>
+          <span className={styles.location}>Spain</span>
+        </div>
       </div>
       <div className={styles.title}>
         {title}
@@ -40,15 +43,15 @@ function Header({ title, name }) {
   );
 }
 
-Header.propTypes = {
+PostInfo.propTypes = {
   title: PropTypes.string,
   name: PropTypes.string,
 
 };
 
-Header.defaultProps = {
+PostInfo.defaultProps = {
   title: '',
   name: '',
 };
 
-export default Header;
+export default PostInfo;

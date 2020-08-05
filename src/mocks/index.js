@@ -1,11 +1,11 @@
-import { ROUTES_LINKS, ROUTES_NAME } from '../components/pages/Home/Routes/Enums';
+import { ROUTES_LINKS, ROUTES_NAME } from '../components/pages/Main/Routes/Enums';
 
 const SIDEBAR = {
   PAGES: [{
     id: ROUTES_NAME.HOME,
-    displayName: 'Home',
+    displayName: 'Main',
     icon: 'HOME',
-    link: ROUTES_LINKS[ROUTES_NAME.FEEDS],
+    link: ROUTES_LINKS[ROUTES_NAME.HOME],
   }, {
     id: ROUTES_NAME.VIDEOS,
     displayName: 'Videos',
@@ -225,9 +225,54 @@ const MOCK = () => new Promise(resolve => resolve({
   }],
 }));
 
+const TOP_STORIES = [{
+  type: 'news',
+  header: 'News',
+  content: [{
+    id: '1',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRPHQvDT5L5okafFltqazq7gaiq-STDqLVA7w&usqp=CAU',
+    header: 'Covid-19',
+    subHeader: 'Subtext which is of two Lines',
+  }, {
+    id: '2',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtSOIMJGUm_p9KDXLRCppqzTk6S26Cz5bJbA&usqp=CAU',
+    header: 'Black lives matter',
+    subHeader: 'Subtext which is of two Lines',
+  }],
+}, {
+  type: 'music',
+  header: 'Music',
+  content: [{
+    id: '1',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSepaYxCqnms8FQD5zHcx1t6NlSlCJa_sXLVA&usqp=CAU',
+    header: 'Taylor swift new album "Folklore"',
+    subHeader: 'Subtext which is of two Lines',
+  }, {
+    id: '2',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKodauEL_ffJAHJY_g-ZloDPR187MBcg640A&usqp=CAU',
+    header: 'Youtube Music',
+    subHeader: 'Subtext which is of two Lines',
+  }],
+}, {
+  type: 'videos',
+  header: 'Videos',
+  content: [{
+    id: '1',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMdJu4yMspP3kmM1LiT5LHrPAnabScaKbkCQ&usqp=CAU',
+    header: 'Best 2018 videos',
+    subHeader: 'Subtext which is of two Lines',
+  }, {
+    id: '2',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVECzTdH_vdN6kNatGLQiEc4ocSFdbcWqztQ&usqp=CAU',
+    header: 'Top videos',
+    subHeader: 'Subtext which is of two Lines',
+  }],
+}];
+
 export {
   SIDEBAR,
   API_MOCK,
   MOCK,
+  TOP_STORIES,
 };
 

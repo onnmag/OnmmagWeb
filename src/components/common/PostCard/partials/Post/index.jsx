@@ -21,6 +21,9 @@ function Post({ title }) {
   }, []);
   return (
     <figure className={styles.container}>
+      <div className={styles.backgroundBlur}>
+        <img src={imageUrl} alt={title} className={styles.blurredImage} />
+      </div>
       {
         isLoading && !isImageLoaded ?
           <span className={styles.loader} /> :
