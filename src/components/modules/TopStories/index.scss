@@ -1,0 +1,37 @@
+@import '../../../styles/main';
+
+.container {
+  margin-top: 2rem;
+  width: 45vw;
+}
+
+.header {
+  @include typography(h3);
+  margin-bottom: 2.2rem;
+}
+
+.cardsContainer {
+  display: flex;
+  padding: 2rem .7rem;
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+
+  > *:not(:last-child) {
+    margin-right: 4rem;
+  }
+}
+
+@include respond(phone) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+  .cardsContainer {
+    flex-direction: column;
+
+    > *:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+}

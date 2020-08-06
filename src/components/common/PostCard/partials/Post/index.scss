@@ -2,6 +2,12 @@
 
 .container {
   margin: 0;
+  position: relative;
+}
+
+.image {
+  border-radius: 4rem;
+  padding-bottom: 1rem;
 }
 
 .loader {
@@ -9,6 +15,20 @@
   width: 60rem;
   background-color: RGBA(var(--manatee-alpha), .5);
 }
+
+.backgroundBlur {
+  position: absolute;
+  bottom: 5px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+}
+
+.blurredImage {
+  width: 90%;
+  filter: blur(20px);
+}
+
 
 @include respond(phone) {
   .image {

@@ -1,20 +1,27 @@
 const STATICS = {
-  HEADER: 'Lorem Ipsum is simply dummy',
-  SUB_HEADER: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  HEADER: 'Knowledge at your fingertips',
+  SUB_HEADER: 'Join OnnMag to explore knowledge differently',
   DISCLAIMER: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  WELCOME_BACK: 'Welcome Back!',
-  NEED_AN_ACCOUNT: 'Need an account?',
+  LOG_IN: 'Log In',
+  DESCRIPTION: 'Please provide your credentials to start exploring again',
   REGISTER: 'Register',
+  FORGOT_PASSWORD: 'Forgot password?',
+  QR_CODE_HEADER: 'Log in with QR code',
+  QR_DESCRIPTION: 'Scan this with OnnMag App to log in Instantly',
 };
 
 const INPUT_LABELS = {
-  EMAIL: 'Email',
-  PASSWORD: 'Password',
+  EMAIL: 'Your email',
+  PASSWORD: 'Your password',
+};
+
+const INPUT_PLACEHOLDERS = {
+  EMAIL: 'abc@xyz.com',
 };
 
 const BUTTON = {
   LOGIN: 'Login',
-  SIGN_UP: 'Sign Up',
+  SIGN_UP: 'Sign up',
 };
 
 const FORM_TYPE = {
@@ -27,4 +34,5 @@ export {
   FORM_TYPE,
   INPUT_LABELS,
   BUTTON,
+  INPUT_PLACEHOLDERS,
 };

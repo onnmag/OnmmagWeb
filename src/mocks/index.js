@@ -1,59 +1,51 @@
+import { ROUTES_LINKS, ROUTES_NAME } from '../components/pages/Main/Routes/Enums';
+
 const SIDEBAR = {
   PAGES: [{
-    id: 'home',
-    displayName: 'Home',
+    id: ROUTES_NAME.HOME,
+    displayName: 'Main',
     icon: 'HOME',
-    link: '/',
+    link: ROUTES_LINKS[ROUTES_NAME.HOME],
   }, {
-    id: 'hallOfFame',
-    displayName: 'Hall of fame',
-    icon: 'MUSIC',
-    link: '/hallOfFrame',
-  }, {
-    id: 'videos',
+    id: ROUTES_NAME.VIDEOS,
     displayName: 'Videos',
     icon: 'VIDEO',
-    link: '/videos',
+    link: ROUTES_LINKS[ROUTES_NAME.VIDEOS],
   }, {
-    id: 'music',
+    id: ROUTES_NAME.MUSIC,
     displayName: 'Music',
     icon: 'MUSIC',
-    link: '/music',
+    link: ROUTES_LINKS[ROUTES_NAME.MUSIC],
   }, {
-    id: 'movies',
+    id: ROUTES_NAME.MOVIES,
     displayName: 'Movies',
     icon: 'MOVIES',
-    link: '/movies',
+    link: ROUTES_LINKS[ROUTES_NAME.MOVIES],
   }, {
-    id: 'webSeries',
+    id: ROUTES_NAME.WEB_SERIES,
     displayName: 'Web Series',
     icon: 'MOVIES',
-    link: '/webSeries',
+    link: ROUTES_LINKS[ROUTES_NAME.WEB_SERIES],
   }, {
-    id: 'news',
+    id: ROUTES_NAME.NEWS,
     displayName: 'News',
     icon: 'NEWS',
-    link: '/news',
+    link: ROUTES_LINKS[ROUTES_NAME.NEWS],
   }, {
-    id: 'blogs',
+    id: ROUTES_NAME.BLOGS,
     displayName: 'Blogs',
     icon: 'ARTICLES',
-    link: '/blogs',
+    link: ROUTES_LINKS[ROUTES_NAME.BLOGS],
   }, {
-    id: 'twitter',
+    id: ROUTES_NAME.TWITTER,
     displayName: 'Twitter',
     icon: 'ARTICLES',
-    link: '/twitter',
+    link: ROUTES_LINKS[ROUTES_NAME.TWITTER],
   }, {
-    id: 'poll',
+    id: ROUTES_NAME.POLL,
     displayName: 'Poll',
     icon: 'ARTICLES',
-    link: '/poll',
-  }, {
-    id: 'recycleAndReuse',
-    displayName: 'Recycle and Reuse',
-    icon: 'ARTICLES',
-    link: '/recycle-and-reuse',
+    link: ROUTES_LINKS[ROUTES_NAME.POLL],
   }],
 };
 
@@ -233,9 +225,54 @@ const MOCK = () => new Promise(resolve => resolve({
   }],
 }));
 
+const TOP_STORIES = [{
+  type: 'news',
+  header: 'News',
+  content: [{
+    id: '1',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRPHQvDT5L5okafFltqazq7gaiq-STDqLVA7w&usqp=CAU',
+    header: 'Covid-19',
+    subHeader: 'Subtext which is of two Lines',
+  }, {
+    id: '2',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtSOIMJGUm_p9KDXLRCppqzTk6S26Cz5bJbA&usqp=CAU',
+    header: 'Black lives matter',
+    subHeader: 'Subtext which is of two Lines',
+  }],
+}, {
+  type: 'music',
+  header: 'Music',
+  content: [{
+    id: '1',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSepaYxCqnms8FQD5zHcx1t6NlSlCJa_sXLVA&usqp=CAU',
+    header: 'Taylor swift new album "Folklore"',
+    subHeader: 'Subtext which is of two Lines',
+  }, {
+    id: '2',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKodauEL_ffJAHJY_g-ZloDPR187MBcg640A&usqp=CAU',
+    header: 'Youtube Music',
+    subHeader: 'Subtext which is of two Lines',
+  }],
+}, {
+  type: 'videos',
+  header: 'Videos',
+  content: [{
+    id: '1',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMdJu4yMspP3kmM1LiT5LHrPAnabScaKbkCQ&usqp=CAU',
+    header: 'Best 2018 videos',
+    subHeader: 'Subtext which is of two Lines',
+  }, {
+    id: '2',
+    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVECzTdH_vdN6kNatGLQiEc4ocSFdbcWqztQ&usqp=CAU',
+    header: 'Top videos',
+    subHeader: 'Subtext which is of two Lines',
+  }],
+}];
+
 export {
   SIDEBAR,
   API_MOCK,
   MOCK,
+  TOP_STORIES,
 };
 

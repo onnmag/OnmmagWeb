@@ -1,0 +1,18 @@
+@import '../../../../../../styles/main';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  @include typography(h1);
+  color: var(--grey-1);
+  margin-bottom: 1.5rem;
+}
+
+.subHeader {
+  @include typography(p1, bold);
+  color: var(--grey-1);
+}

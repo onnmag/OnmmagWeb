@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.scss';
 
-function Input({ type, isValid, label, onChange, value, onBlur }) {
+function Input({ type, isValid, label, onChange, value, onBlur, placeholder }) {
   return (
       <label htmlFor={type} className={styles.container}>
         <div className={styles.inputContainer}>
@@ -14,6 +14,7 @@ function Input({ type, isValid, label, onChange, value, onBlur }) {
             value={value}
             onChange={onChange}
             onBlur={onBlur}
+            placeholder={placeholder}
           />
         </div>
         {!isValid && <span />}
@@ -28,10 +29,12 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func.isRequired,
   value: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 Input.defaultProps = {
   value: '',
+  placeholder: '',
 };
 
 export default Input;

@@ -1,0 +1,40 @@
+@import '../../../../../styles/main';
+
+.container {
+  background-color: var(--grey-5);
+}
+
+.tabContainer {
+  font-size: 1.4rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: var(--grey-2);
+
+  &:hover {
+    color: var(--grey-1);
+  }
+}
+
+.link {
+  display: flex;
+  color: inherit;
+}
+
+.active {
+  @include typography(h6, semibold);
+  color: var(--grey-1);
+  cursor: default;
+  background-color: var(--grey-6);
+
+  &:hover {
+    background-color: var(--grey-6);
+    color: var(--grey-1);
+  }
+}
+
+.displayName {
+  @include typography(h6);
+}

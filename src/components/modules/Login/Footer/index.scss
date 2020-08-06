@@ -1,7 +1,7 @@
 @import '../../../../styles/main';
 
 .container {
-  background-color: var(--primary-color);
+  background-color: RGBA(var(--secondary-color-alpha), .3);
   display: flex;
   justify-content: center;
   align-items: center;

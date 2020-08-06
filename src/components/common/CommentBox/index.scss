@@ -6,13 +6,12 @@
 
 .inputBox {
   @include typography(h7);
-
   height: 4rem;
   outline: none;
   padding: 1rem;
-  border-radius: 1rem;
-  border: 1px solid $primaryBorderColor;
   width: 100%;
+  border: none;
+  background-color: inherit;
 
   &::placeholder {
     @include typography(h6, semibold);

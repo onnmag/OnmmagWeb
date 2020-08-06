@@ -2,36 +2,31 @@
 
 .container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2.5fr 1fr;
+  grid-column-gap: 6rem;
 }
 
 .contentSlider {
-  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
   flex: 2 0 0;
+
+  > * {
+    flex: 1 0 0;
+  }
+
+  > *:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 4.4rem;
+  }
 }
 
 .signUpContainer {
-  margin: 1rem;
-  background: var(--primary-color);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.header {
-  @include typography(H1);
-  color: RGBA(var(--black-alpha), .8);
-  margin-bottom: 4rem;
-}
-
-.subHeader {
-  @include typography(H3);
-  color: RGBA(var(--black-alpha), .8);
-  margin-bottom: 1rem;
+  border-radius: 1.5rem;
+  margin-right: 6rem;
+  background: var(--pattrick-blue);
 }
 
 .disclaimer {
