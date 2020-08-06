@@ -6,7 +6,6 @@ import ICON_NAME, { ICON } from './enum';
 import { mediaQuery, BREAKPOINTS } from '../../../utils';
 
 const ACTIVE_THEME = 'LIGHT';
-// const SIZE_MULTIPLIER = 5;
 
 function Icon({ name, size, className, onClick }) {
   const SIZE_MULTIPLIER = useMemo(() => {
