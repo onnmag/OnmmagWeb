@@ -31,3 +31,11 @@
     width: 100%;
   }
 }
+
+@include respond(smallScreen) {
+  .container {
+    > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}
