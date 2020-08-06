@@ -49,3 +49,10 @@
     padding: 0 .5rem;
   }
 }
+
+@include respond(smallScreen) {
+  .container {
+    min-height: 50rem;
+    min-width: 40rem;
+  }
+}

@@ -8,4 +8,8 @@
   @if $breakpoint == tab {
     @media only screen and (max-width: 1070px) { @content };
   }
+
+  @if $breakpoint == smallScreen {
+    @media only screen and (max-width: 1400px) { @content };
+  }
 }

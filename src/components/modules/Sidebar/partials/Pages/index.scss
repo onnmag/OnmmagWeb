@@ -38,3 +38,9 @@
 .displayName {
   @include typography(h6);
 }
+
+@include respond(smallScreen) {
+  .tabContainer {
+    font-size: 1rem;
+  }
+}

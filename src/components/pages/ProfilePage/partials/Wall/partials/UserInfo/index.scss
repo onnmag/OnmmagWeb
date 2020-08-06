@@ -32,19 +32,19 @@
 }
 
 .verifiedIcon {
-  color: var(--dim-grey);
+  color: var(--grey-2);
 }
 
 
 .userName {
-  @include typography(h5, semibold);
+  @include typography(h4);
   margin-right: .5rem;
   margin-bottom: .3rem;
 }
 
 .location {
-  @include typography(h8, semibold);
-  color: var(--dim-grey);
+  @include typography(p2, semibold);
+  color: var(--grey-2);
 }
 
 .profilePicture {

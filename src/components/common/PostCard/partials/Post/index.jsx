@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { mediaQuery, BREAKPOINTS } from '../../../../../utils';
 
 import styles from './index.scss';
 
@@ -8,7 +9,11 @@ function Post({ title }) {
   const [isImageLoaded, setImageLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch('https://picsum.photos/600/600.jpg')
+    let url = 'https://picsum.photos/600/600.jpg';
+    if (mediaQuery(BREAKPOINTS.SMALL_SCREEN)) {
+      url = 'https://picsum.photos/500/500.jpg';
+    }
+    fetch(url)
       .then(res => {
         setImageUrl(res.url);
         const img = new Image();

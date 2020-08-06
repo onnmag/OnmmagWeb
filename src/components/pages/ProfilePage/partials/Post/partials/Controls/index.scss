@@ -15,11 +15,13 @@
   align-items: center;
 
   > *:first-child {
+    display: flex;
+    align-items: center;
     margin-right: .5rem;
   }
 
   > *:nth-child(2) {
-    @include typography(h6, bold);
+    @include typography(p1, semibold);
   }
 
   &:not(:last-child) {

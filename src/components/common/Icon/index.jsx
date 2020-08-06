@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 
 import ICON_NAME, { ICON } from './enum';
+import { mediaQuery, BREAKPOINTS } from '../../../utils';
 
 const ACTIVE_THEME = 'LIGHT';
-const SIZE_MULTIPLIER = 5;
 
 function Icon({ name, size, className, onClick }) {
+  const SIZE_MULTIPLIER = useMemo(() => {
+    if (mediaQuery(BREAKPOINTS.SMALL_SCREEN)) {
+      return 4;
+    }
+    return 5;
+  }, []);
   const GetIcon = (props) => (
       ICON[ACTIVE_THEME][name]({ ...props })
     );

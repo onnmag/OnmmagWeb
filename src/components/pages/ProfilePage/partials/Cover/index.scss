@@ -12,6 +12,7 @@
   > *:nth-child(2) {
     height: 50%;
     padding: 2rem;
+    overflow-y: auto;
   }
 }
 
@@ -37,7 +38,7 @@
 }
 
 .postsCount, .subCount {
-  @include typography(h6, bold);
+  @include typography(p1);
   color: RGBA(var(--white-alpha), .8);
 }
 
@@ -46,8 +47,8 @@
 }
 
 .info {
-  @include typography(h6);
-  color: RGBA(var(--manatee-alpha), .7);
+  @include typography(p1);
+  color: var(--grey-3);
   margin-top: 2rem;
 
 }
@@ -57,7 +58,7 @@
 }
 
 .personalInfo {
-  @include typography(h7);
+  @include typography(p2);
 
   &:not(:last-child) {
     margin-bottom: 2rem;
@@ -69,6 +70,6 @@
   }
 
   > *:nth-child(2) {
-    color: RGBA(var(--manatee-alpha), .7);
+    color: var(--grey-3)
   }
 }

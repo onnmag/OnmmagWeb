@@ -4,6 +4,11 @@ const mediaQuery = (breakPoint) => {
   return mq.matches;
 };
 
+const BREAKPOINTS = {
+  SMALL_SCREEN: 1400,
+};
+
 export {
   mediaQuery,
+  BREAKPOINTS,
 };
