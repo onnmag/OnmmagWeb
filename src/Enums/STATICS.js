@@ -17,9 +17,15 @@ const INPUT_TYPES = {
   PASSWORD: 'PASSWORD',
 };
 
+const THEMES = {
+  DARK: 'dark',
+  LIGHT: 'light',
+};
+
 export {
   STATICS,
   LINKS,
   CONTENT_TYPE,
   INPUT_TYPES,
+  THEMES,
 };

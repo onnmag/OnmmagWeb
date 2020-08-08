@@ -7,6 +7,7 @@
 
 .header {
   @include typography(h3);
+  color: var(--grey-1);
   margin-bottom: 2.2rem;
 }
 
@@ -14,7 +15,6 @@
   overflow-x: auto;
   display: flex;
   padding: 2rem .7rem;
-  background-color: var(--primary-color);
   border-radius: 2rem;
 
   > *:not(:last-child) {

@@ -3,7 +3,7 @@ import {
   MdHome, MdBook, MdVideoLibrary, MdLibraryMusic, MdSearch, MdPeople,
   MdNotifications, MdMessage, MdFavorite, MdShare,
   MdLocalMovies, MdLibraryBooks, MdVerifiedUser, MdComment, MdMenu,
-  MdMoreVert,
+  MdMoreVert, MdWbSunny,
 } from 'react-icons/md';
 
 
@@ -30,6 +30,7 @@ const ICONS_NAME = {
   COMMENT: 'COMMENT',
   MENU: 'MENU',
   MORE_VERT: 'MORE_VERT',
+  SUN: 'SUN',
 };
 
 const ICON = {
@@ -50,6 +51,7 @@ const ICON = {
     [ICONS_NAME.COMMENT]: MdComment,
     [ICONS_NAME.MENU]: MdMenu,
     [ICONS_NAME.MORE_VERT]: MdMoreVert,
+    [ICONS_NAME.SUN]: MdWbSunny,
   },
   [THEME.DARK]: {
     [ICONS_NAME.HOME]: MdHome,
@@ -68,6 +70,7 @@ const ICON = {
     [ICONS_NAME.COMMENT]: MdComment,
     [ICONS_NAME.MENU]: MdMenu,
     [ICONS_NAME.MORE_VERT]: MdMoreVert,
+    [ICONS_NAME.SUN]: MdWbSunny,
   },
 };
 

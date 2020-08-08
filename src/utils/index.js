@@ -4,6 +4,17 @@ const mediaQuery = (breakPoint) => {
   return mq.matches;
 };
 
+const setDataTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+};
+
+const setSelectedTheme = (theme) => {
+  localStorage.setItem('data-theme', theme);
+  setDataTheme(theme);
+};
+
+const getActiveTheme = () => localStorage.getItem('data-theme');
+
 const BREAKPOINTS = {
   SMALL_SCREEN: 1400,
 };
@@ -11,4 +22,6 @@ const BREAKPOINTS = {
 export {
   mediaQuery,
   BREAKPOINTS,
+  setSelectedTheme,
+  getActiveTheme,
 };

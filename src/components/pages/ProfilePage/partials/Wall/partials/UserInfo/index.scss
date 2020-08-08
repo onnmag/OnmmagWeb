@@ -38,6 +38,7 @@
 
 .userName {
   @include typography(h4);
+  color: var(--grey-1);
   margin-right: .5rem;
   margin-bottom: .3rem;
 }

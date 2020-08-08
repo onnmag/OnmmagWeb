@@ -1,7 +1,13 @@
 @import '../../../../../styles/main';
 
 .container {
+  display: flex;
   padding: .5rem 2rem;
+  align-items: center;
+
+  > *:first-child {
+    flex: 1;
+  }
 }
 
 .about {
@@ -40,6 +46,9 @@
 .title {
   @include typography(p1);
   color: var(--grey-1);
+}
+
+.moreInfo {
 }
 
 @include respond(phone) {

@@ -12,6 +12,7 @@
 }
 
 .raiseCard {
+  background-color: var(--grey-6);
   box-shadow: 0 2px 20px -1px rgba(0, 0, 0, 0.2);
   transition: box-shadow .1s;
 }
@@ -36,6 +37,15 @@
   }
 }
 
+
+@include respond(smallScreen) {
+  .container {
+    min-height: 50rem;
+    min-width: 40rem;
+  }
+}
+
+
 @include respond(phone) {
   .container {
     min-height: 40rem;
@@ -47,12 +57,5 @@
 
   .controls {
     padding: 0 .5rem;
-  }
-}
-
-@include respond(smallScreen) {
-  .container {
-    min-height: 50rem;
-    min-width: 40rem;
   }
 }
