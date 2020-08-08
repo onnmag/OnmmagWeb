@@ -1,7 +1,6 @@
 @import '../../../../../styles/main';
 
 .container {
-  background-color: var(--grey-5);
 }
 
 .tabContainer {
@@ -27,10 +26,10 @@
   @include typography(h6, semibold);
   color: var(--grey-1);
   cursor: default;
-  background-color: var(--grey-6);
+  background-color: var(--grey-5);
 
   &:hover {
-    background-color: var(--grey-6);
+    background-color: var(--grey-5);
     color: var(--grey-1);
   }
 }

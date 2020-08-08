@@ -226,48 +226,57 @@ const MOCK = () => new Promise(resolve => resolve({
 }));
 
 const TOP_STORIES = [{
-  type: 'news',
-  header: 'News',
-  content: [{
-    id: '1',
-    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRPHQvDT5L5okafFltqazq7gaiq-STDqLVA7w&usqp=CAU',
-    header: 'Covid-19',
-    subHeader: 'Subtext which is of two Lines',
-  }, {
-    id: '2',
-    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTtSOIMJGUm_p9KDXLRCppqzTk6S26Cz5bJbA&usqp=CAU',
-    header: 'Black lives matter',
-    subHeader: 'Subtext which is of two Lines',
-  }],
+  id: '1',
+  thumbnail: 'https://i.guim.co.uk/img/media/f91cd24f75659013c05090a9c2ec7862f2df10e7/0_375_4316_2590/master/4316.jpg?width=300&quality=85&auto=format&fit=max&s=36ce999626536ba396683c389b3d8d28',
+  category: 'Music',
+  header: 'Lover Studio album by Taylor Swift',
+  description: 'Lover is the seventh studio album by American singer-songwriter Taylor Swift, released on August 23, 2019, through Republic Records. As the executive producer, Swift enlisted producers Jack Antonoff, Louis Bell, Frank Dukes and Joel Little for the album.',
+  cta: {
+    text: 'Read more',
+    action: '',
+  },
 }, {
-  type: 'music',
-  header: 'Music',
-  content: [{
-    id: '1',
-    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSepaYxCqnms8FQD5zHcx1t6NlSlCJa_sXLVA&usqp=CAU',
-    header: 'Taylor swift new album "Folklore"',
-    subHeader: 'Subtext which is of two Lines',
-  }, {
-    id: '2',
-    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQKodauEL_ffJAHJY_g-ZloDPR187MBcg640A&usqp=CAU',
-    header: 'Youtube Music',
-    subHeader: 'Subtext which is of two Lines',
-  }],
+  id: '2',
+  thumbnail: 'https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/overview/shop-2080-ti-300@2x.jpg',
+  category: 'Technology',
+  header: 'NVIDIA GEFORCE RTX™ 2080 TI',
+  description: 'The new card can achieve playable frame rates at 4K, and it eats up everything at 1440p (for 1080p gaming, however, this card is almost definitely overkill—barring only the most extreme high-FPS addicts',
+  cta: {
+    text: 'Read more',
+    action: '',
+  },
 }, {
-  type: 'videos',
-  header: 'Videos',
-  content: [{
-    id: '1',
-    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQMdJu4yMspP3kmM1LiT5LHrPAnabScaKbkCQ&usqp=CAU',
-    header: 'Best 2018 videos',
-    subHeader: 'Subtext which is of two Lines',
-  }, {
-    id: '2',
-    thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVECzTdH_vdN6kNatGLQiEc4ocSFdbcWqztQ&usqp=CAU',
-    header: 'Top videos',
-    subHeader: 'Subtext which is of two Lines',
-  }],
+  id: '1',
+  thumbnail: 'https://i.guim.co.uk/img/media/0bdd9ad7da26445ed1d50146fc236a4a3f90cccf/0_0_1917_1150/master/1917.jpg?width=300&quality=85&auto=format&fit=max&s=3267daa6c5fde4fcd6fe0262d624a94c',
+  category: 'Sports"',
+  header: 'Won Hungarian grand prix',
+  description: 'Lewis Hamilton shows Mercedes\' utter dominance in 70th Anniversary practice at Silverstone',
+  cta: {
+    text: 'Read more',
+    action: '',
+  },
+}, {
+  id: '2',
+  thumbnail: 'https://i.pinimg.com/originals/b9/e3/5a/b9e35a1974d9263ae84b5c317170bcbd.png',
+  category: 'Entertainment',
+  header: 'Its Butters!',
+  description: 'New ‘South Park’ movies could be on the way from Trey Parker and Matt Stone',
+  cta: {
+    text: 'Read more',
+    action: '',
+  },
+}, {
+  id: '1',
+  thumbnail: 'https://www.hamilton-medical.com/.imaging/stk/hamilton-theme/text-backgroundimage-tablet/dam/Images/A-Pictures/Home/covid-19-header-2000x769.jpg/jcr:content/covid-19-header-2000x769.jpg.2020-03-20-09-55-30.jpg',
+  category: 'News',
+  header: 'Cure for COVID-19',
+  description: 'Covid-19: Serum Institute caps proposed vaccine price at Rs 225/dose',
+  cta: {
+    text: 'Read more',
+    action: '',
+  },
 }];
+
 
 export {
   SIDEBAR,

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
 
+import MoreVertical from '../../../MoreVertical';
+import Options from '../Options';
+
 import styles from './index.scss';
 
 function PostInfo({ title, name }) {
@@ -23,22 +26,27 @@ function PostInfo({ title, name }) {
   }, []);
   return (
     <div className={styles.container}>
-      <div className={styles.about}>
-        {
-          isLoading && !isImageLoaded ?
-            <span className={styles.loader} /> :
-            <img src={imageUrl} alt={name} className={styles.image} />
-        }
-        <div className={styles.postInfo}>
-          <Link to={`${ROUTES_LINKS.PROFILE}/ester_exposito`}>
-            <span className={styles.name}>{name}</span>
-          </Link>
-          <span className={styles.location}>Spain</span>
+      <div>
+        <div className={styles.about}>
+          {
+            isLoading && !isImageLoaded ?
+              <span className={styles.loader} /> :
+              <img src={imageUrl} alt={name} className={styles.image} />
+          }
+          <div className={styles.postInfo}>
+            <Link to={`${ROUTES_LINKS.PROFILE}/ester_exposito`}>
+              <span className={styles.name}>{name}</span>
+            </Link>
+            <span className={styles.location}>Spain</span>
+          </div>
+        </div>
+        <div className={styles.title}>
+          {title}
         </div>
       </div>
-      <div className={styles.title}>
-        {title}
-      </div>
+      <MoreVertical className={styles.moreInfo}>
+        <Options />
+      </MoreVertical>
     </div>
   );
 }

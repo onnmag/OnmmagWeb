@@ -35,3 +35,9 @@
     width: 100%;
   }
 }
+
+[data-theme='dark'] {
+  .backgroundBlur {
+    opacity: .5;
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../../../../styles/main';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+}
+
+.button {
+  @include typography(p1, bold);
+  color: var(--grey-2);
+  width: 20rem;
+  outline: none;
+  border-right: 0;
+  border: none;
+  border-bottom: 1px solid var(--grey-5);
+  background-color: inherit;
+  padding: 1rem 0;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--grey-5);
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

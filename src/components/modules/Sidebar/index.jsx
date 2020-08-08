@@ -4,11 +4,27 @@ import Pages from './partials/Pages';
 import Categories from './partials/Categories';
 import styles from './index.scss';
 
+import Icon, { ICON_NAME } from '../../common/Icon';
+import { THEMES } from '../../../Enums/STATICS';
+import { useAppState } from '../../../App';
+
 function SideBar() {
+  const { activeTheme, setTheme } = useAppState();
+  const toggleTheme = () => {
+    if (activeTheme === THEMES.LIGHT) {
+      setTheme(THEMES.DARK);
+    } else {
+      setTheme(THEMES.LIGHT);
+    }
+  };
+
   return (
-      <div className={styles.menuContainer}>
-        <Pages />
-        <Categories />
+      <div className={styles.container}>
+        <div className={styles.menuContainer}>
+          <Pages />
+          <Categories />
+        </div>
+        <Icon name={ICON_NAME.SUN} className={styles.toggleTheme} onClick={toggleTheme} />
       </div>
     );
 }

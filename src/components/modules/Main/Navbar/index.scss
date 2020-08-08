@@ -6,3 +6,8 @@
   padding: 1rem 2rem;
   background-color: var(--pattrick-blue);
 }
+[data-theme='dark'] {
+  .container {
+    background-color: var(--grey-6);
+  }
+}

@@ -14,7 +14,7 @@ function TopStories() {
       <h1 className={styles.header}>{STATICS.TOP_STORIES}</h1>
       <div className={styles.cardsContainer}>
         {TOP_STORIES.map(story => (
-          <Card data={story} key={story.type} />
+          <Card data={story} key={story.id} />
         ))}
       </div>
     </div>

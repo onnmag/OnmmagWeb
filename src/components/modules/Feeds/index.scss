@@ -17,6 +17,15 @@
   }
 }
 
+@include respond(smallScreen) {
+  .container {
+    > *:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
 @include respond(phone) {
   .container {
     overflow: initial;
@@ -29,13 +38,5 @@
   }
   .card {
     width: 100%;
-  }
-}
-
-@include respond(smallScreen) {
-  .container {
-    > *:not(:last-child) {
-      margin-bottom: 2rem;
-    }
   }
 }
