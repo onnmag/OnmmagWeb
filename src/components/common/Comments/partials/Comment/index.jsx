@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './index.scss';
 import { LINKS } from '../../../../../Enums/STATICS';
 
-function Comment({ comment, userName, profileLink, id }) {
+function Comment({ comment, userName }) {
   const [imageUrl, setImageUrl] = useState('');
   const [isImageLoaded, setImageLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -44,8 +44,6 @@ function Comment({ comment, userName, profileLink, id }) {
 Comment.propTypes = {
   comment: PropTypes.string.isRequired,
   userName: PropTypes.string.isRequired,
-  profileLink: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
 };
 
 export default Comment;
