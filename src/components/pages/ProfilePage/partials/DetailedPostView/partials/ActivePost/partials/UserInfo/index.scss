@@ -1,0 +1,55 @@
+@import '../../../../../../../../../styles/main';
+
+.container {
+  display: flex;
+  background-color: var(--grey-6);
+  padding: 1.6rem 1.2rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey-5);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+  margin-right: 1.8rem;
+
+  img {
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.verifiedIcon {
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  margin-right: 1rem;
+}
+
+.name {
+  @include typography(p1, bold);
+  line-height: 1.7rem;
+  color: var(--grey-1);
+  margin-right: .5rem;
+}
+
+.controls {
+  display: flex;
+}
+.icon {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.liked {
+  color: var(--warn)
+}
+.notLiked {
+  color: var(--grey-1);
+}

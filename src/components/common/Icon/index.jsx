@@ -9,6 +9,9 @@ const ACTIVE_THEME = 'LIGHT';
 
 function Icon({ name, size, className, onClick }) {
   const SIZE_MULTIPLIER = useMemo(() => {
+    if (mediaQuery(BREAKPOINTS.PHONE)) {
+      return 5.5;
+    }
     if (mediaQuery(BREAKPOINTS.SMALL_SCREEN)) {
       return 4;
     }

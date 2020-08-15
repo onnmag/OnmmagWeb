@@ -11,7 +11,6 @@ function PostCard({ name, title, contentType, profileImage, content, id }) {
   const [isCommentSectionActive, setCommentSectionStatus] = useState(false);
 
   const handleComment = () => {
-    console.log('entered');
     setCommentSectionStatus((prevState) => !prevState);
   };
 

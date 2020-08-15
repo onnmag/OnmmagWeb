@@ -1,0 +1,16 @@
+@import '../../../styles/main';
+
+.btn {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.subscribed {
+  color: var(--grey-1);
+}
+
+.subscribe {
+  color: var(--blue);
+}
