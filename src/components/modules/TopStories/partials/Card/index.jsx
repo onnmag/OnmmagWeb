@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { STATICS } from '../../ENUMS';
 import styles from './index.scss';
 
 function Card({ data: { description, header, thumbnail, id, category, cta } }) {

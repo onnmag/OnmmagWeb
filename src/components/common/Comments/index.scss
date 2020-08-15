@@ -1,0 +1,9 @@
+@import '../../../styles/main';
+
+
+.container {
+  background-color: var(--grey-6);
+  height: 100%;
+  overflow-y: scroll;
+  padding: 1.6rem 1.2rem;;
+}

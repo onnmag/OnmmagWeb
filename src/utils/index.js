@@ -17,6 +17,7 @@ const getActiveTheme = () => localStorage.getItem('data-theme');
 
 const BREAKPOINTS = {
   SMALL_SCREEN: 1400,
+  PHONE: 600,
 };
 
 export {

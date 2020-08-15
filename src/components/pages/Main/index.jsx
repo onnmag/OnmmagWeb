@@ -22,6 +22,9 @@ function Main() {
       </div>
     );
   }
+  // return (
+  //   <Seats />
+  // );
   return (
     <div className={styles.container}>
       <NavBar />

@@ -18,10 +18,12 @@
 
 .backgroundBlur {
   position: absolute;
-  bottom: 5px;
+  bottom: -5px;
+  top: 100px;
   z-index: -1;
   display: flex;
   justify-content: center;
+  padding-bottom: 1rem;
 }
 
 .blurredImage {

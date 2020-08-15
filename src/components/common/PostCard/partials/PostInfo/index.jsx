@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
+import { LINKS } from '../../../../../Enums/STATICS';
 
 import MoreVertical from '../../../MoreVertical';
 import Options from '../Options';
@@ -13,7 +14,7 @@ function PostInfo({ title, name }) {
   const [isImageLoaded, setImageLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch('https://picsum.photos/40/40.jpg')
+    fetch(LINKS.RANDOM_PROFILE_IMAGE)
       .then(res => {
         setImageUrl(res.url);
         const img = new Image();

@@ -1,0 +1,51 @@
+@import '../../../../../../../styles/main';
+
+.container {
+  display: flex;
+  max-height: 60vh;
+  max-width: 80vw;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+  max-height: 100%;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  filter: blur(5px);
+  background-size: cover;
+  background-position: center;
+  margin: -5px -10px -10px -5px;
+}
+
+.postDetails {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+@include respond(smallScreen) {
+  .container {
+    max-height: 80vh;
+  }
+  .postDetails {
+    max-width: 40rem;
+  }
+}

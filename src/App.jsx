@@ -22,6 +22,14 @@ function App() {
     setSelectedTheme(theme);
   };
 
+  const toggleTheme = () => {
+    if (activeTheme === THEMES.LIGHT) {
+      setTheme(THEMES.DARK);
+    } else {
+      setTheme(THEMES.LIGHT);
+    }
+  };
+
   useEffect(() => {
     setSelectedTheme(activeTheme);
   }, [activeTheme]);
@@ -35,6 +43,7 @@ function App() {
           setActivePage,
           activeTheme,
           setTheme,
+          toggleTheme,
         }}
         >
             <OpenRoutes />
