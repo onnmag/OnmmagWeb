@@ -58,9 +58,15 @@ module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
     module: {
       rules: [
         {
-          loader: 'babel-loader',
-          exclude: /node_modules/,
           test: /\.jsx?$/,
+          exclude: /(node_modules)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react'],
+              plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-object-rest-spread'],
+            },
+          }
         },
         {
           loader: 'eslint-loader',

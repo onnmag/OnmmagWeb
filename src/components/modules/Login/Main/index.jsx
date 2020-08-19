@@ -4,6 +4,7 @@ import FeedSlider from './partials/FeedSlider';
 import Form from './partials/Form';
 import Header from './partials/Header';
 
+
 import styles from './index.scss';
 
 function Main() {

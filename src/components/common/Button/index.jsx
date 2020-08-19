@@ -10,7 +10,8 @@ function Button({ onClick, className, children, isDisabled }) {
       onClick={onClick}
       disabled={isDisabled}
       className={cx(styles.btn, {
-      [className]: className,
+        [styles.disabled]: isDisabled,
+        [className]: className,
     })}
     >
       {children}

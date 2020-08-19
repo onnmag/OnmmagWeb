@@ -39,9 +39,13 @@
   &:disabled {
     cursor: default;
     background-color: RGBA(var(--white-alpha), .12);
-    color: RGBA(var(--white-alpha), .3)
+    color: RGBA(var(--white-alpha), .3);
+    &::after {
+      display: none;
+    }
   }
 }
+
 
 .btnPrimary {
   background-color: var(--primary-color);

@@ -8,3 +8,9 @@
   color: var(--grey-1);
   padding-left: 4.4rem;
 }
+
+[data-theme='dark'] {
+  .container {
+    background-color: var(--grey-5);
+  }
+}

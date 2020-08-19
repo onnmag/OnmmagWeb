@@ -6,7 +6,6 @@ import { useAuth } from '../../../core/authProvider';
 
 function PrivateRoute({ component: Component, ...rest }) {
   const { isLoggedIn } = useAuth();
-  console.log({ isLoggedIn });
   return (
     <Route
       {...rest}
@@ -27,7 +26,7 @@ function PrivateRoute({ component: Component, ...rest }) {
 }
 
 PrivateRoute.propTypes = {
-  component: PropTypes.node.isRequired,
+  component: PropTypes.func.isRequired,
   rest: PropTypes.object,
 };
 

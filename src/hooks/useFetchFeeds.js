@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+// TODO: Remove useFetchFeeds
 function useFetchFeeds({ pageNumber }) {
   const [feeds, setFeeds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,8 +24,8 @@ function useFetchFeeds({ pageNumber }) {
           ...res.data,
         ]));
         setHasMore(false);
-        // setHasMore(res.data.length > 0);
-        setIsLoading(false);
+        setHasMore(res.data.length > 0);
+        // setIsLoading(false);
     }).catch(e => {
       if (axios.isCancel(e)) return;
       setIsError(true);
@@ -41,4 +41,6 @@ function useFetchFeeds({ pageNumber }) {
   };
 }
 
-export default useFetchFeeds;
+export {
+  useFetchFeeds as default,
+};

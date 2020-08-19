@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { STATICS } from '../../../../Enums/STATICS';
+import { STATICS } from '../../../../constants/STATICS';
 import styles from './index.scss';
 
 function Header() {

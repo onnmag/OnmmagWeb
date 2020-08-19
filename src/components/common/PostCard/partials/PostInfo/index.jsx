@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
-import { LINKS } from '../../../../../Enums/STATICS';
+import { LINKS } from '../../../../../constants/STATICS';
 
 import MoreVertical from '../../../MoreVertical';
 import Options from '../Options';

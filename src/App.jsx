@@ -1,13 +1,15 @@
 import React, { useEffect, createContext, useContext, useState } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 
+import { AUTH0 } from "./core/KEYS";
 import OpenRoutes from './routes/OpenRoutes';
 import AuthProvider from './core/authProvider';
 import { SIDEBAR } from './mocks';
 
 import { getActiveTheme, setSelectedTheme } from './utils';
-import { THEMES } from './Enums/STATICS';
+import { THEMES } from './constants/STATICS';
 
 import './styles/app.scss';
 
@@ -36,20 +38,26 @@ function App() {
 
 
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <AppContext.Provider value={{
-          activePage,
-          setActivePage,
-          activeTheme,
-          setTheme,
-          toggleTheme,
-        }}
-        >
-            <OpenRoutes />
-        </AppContext.Provider>
-      </AuthProvider>
-    </BrowserRouter>
+    <Auth0Provider
+      domain={AUTH0.DOMAIN}
+      clientId={AUTH0.CLIENT_ID}
+      redirectUri={AUTH0.REDIRECT_URI}
+    >
+      <BrowserRouter>
+        <AuthProvider>
+          <AppContext.Provider value={{
+            activePage,
+            setActivePage,
+            activeTheme,
+            setTheme,
+            toggleTheme,
+          }}
+          >
+              <OpenRoutes />
+          </AppContext.Provider>
+        </AuthProvider>
+      </BrowserRouter>
+    </Auth0Provider>
   );
 }
 

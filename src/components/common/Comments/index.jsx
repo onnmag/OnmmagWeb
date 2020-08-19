@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import random from 'random-name';
 
 import Comment from './partials/Comment';
-import { RANDOM_COMMENTS } from '../../../Enums/STATICS';
+import { RANDOM_COMMENTS } from '../../../constants/STATICS';
 
 import styles from './index.scss';
 

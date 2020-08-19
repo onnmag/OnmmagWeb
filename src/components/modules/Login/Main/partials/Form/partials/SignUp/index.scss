@@ -1,0 +1,64 @@
+@import '../../../../../../../../styles/main';
+
+.container {
+}
+
+.header {
+  > p:first-child {
+    @include typography(h2);
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+
+  > p:nth-child(2) {
+    @include typography(p1);
+    color: var(--white);
+  }
+}
+
+.col2 {
+  display: flex;
+
+  > * {
+    flex: 1 0 0;
+  }
+
+  > *:first-child {
+    margin-right: 1rem;
+  }
+}
+
+.buttonContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 23rem;
+  height: 4.6rem;
+}
+
+.login {
+  @include typography(p2);
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--white);
+
+  > a {
+    color: var(--primary-color);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .btn {
+    background-color: var(--primary-color);
+    color: var(--grey-5);
+  }
+}

@@ -7,3 +7,9 @@
   grid-template-rows: 5.5rem 1fr 3rem;
   grid-row-gap: 5.5rem;
 }
+
+[data-theme='dark'] {
+  .container {
+    background-color: var(--bg-color);
+  }
+}

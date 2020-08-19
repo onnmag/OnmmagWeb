@@ -3,7 +3,7 @@ import React from 'react';
 import Icon from '../../common/Icon';
 import ICON_NAME from '../../common/Icon/enum';
 
-import { STATICS } from '../../../Enums/STATICS';
+import { STATICS } from '../../../constants/STATICS';
 import styles from './index.scss';
 
 function SearchBar() {

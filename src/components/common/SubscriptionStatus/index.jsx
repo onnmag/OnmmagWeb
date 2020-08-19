@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { SUBSCRIPTION_STATUS } from '../../../Enums/STATICS';
+import { SUBSCRIPTION_STATUS } from '../../../constants/STATICS';
 import styles from './index.scss';
 
 function SubscriptionStatus({ status, onClick }) {

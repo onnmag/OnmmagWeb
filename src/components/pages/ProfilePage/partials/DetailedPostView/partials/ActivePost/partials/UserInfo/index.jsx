@@ -8,7 +8,7 @@ import MoreVertical from '../../../../../../../../common/MoreVertical';
 // TODO: REPLACE OPTIOSN WITH ACTUAL OPTIONS
 import Options from '../../../../../../../../common/PostCard/partials/Options';
 
-import { SUBSCRIPTION_STATUS } from '../../../../../../../../../Enums/STATICS';
+import { SUBSCRIPTION_STATUS } from '../../../../../../../../../constants/STATICS';
 
 
 import styles from './index.scss';

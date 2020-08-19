@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import useInputField from '../../../../../../../../hooks/useInputField';
-import { INPUT_LABELS, STATICS, BUTTON, INPUT_PLACEHOLDERS } from '../../../../enum';
-import { INPUT_TYPES } from '../../../../../../../../Enums/STATICS';
+import { INPUT_LABELS, STATICS, BUTTON, INPUT_PLACEHOLDERS, FORM_TYPE } from '../../../../enum';
+import { INPUT_TYPES } from '../../../../../../../../constants/STATICS';
 import Input from '../Input';
 import Button from '../../../../../../../common/Button';
 import { useAuth } from '../../../../../../../../core/authProvider';
 
 import styles from './index.scss';
 
-function Login() {
+function Login({ setFormType }) {
   const { logIn } = useAuth();
   const email = useInputField({ type: INPUT_TYPES.EMAIL });
   const password = useInputField({ type: INPUT_TYPES.PASSWORD });
@@ -51,7 +52,7 @@ function Login() {
       <div className={styles.label}>
         <span className={styles.signUp}>
           {'Not a member yet? '}
-          <a>{BUTTON.SIGN_UP}</a>
+          <a onClick={() => setFormType(FORM_TYPE.SIGN_UP)}>{BUTTON.SIGN_UP}</a>
           {' here'}
         </span>
       </div>
@@ -68,5 +69,9 @@ function Login() {
     </div>
   );
 }
+
+Login.propTypes = {
+  setFormType: PropTypes.func.isRequired,
+};
 
 export default Login;
