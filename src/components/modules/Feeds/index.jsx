@@ -14,10 +14,9 @@ function FeedsPage() {
   useEffect(() => {
     makeRequest(getFeeds({ pageNumber }))
       .then((response) => {
-        console.log({ response });
         setFeeds(prevFeeds => ([
           ...prevFeeds,
-          response,
+          ...response,
         ]));
         setHasMore(response.length > 0);
       });

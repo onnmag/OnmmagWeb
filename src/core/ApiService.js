@@ -6,6 +6,10 @@ const { CancelToken } = axios;
 
 export const CancelRequestCode = 'ONNMAG_WEB_CANCEL_REQUEST';
 
+export const CONTENT_TYPE = {
+  IMAGE: 'image/jpeg',
+};
+
 function makeRequest({ endpoint, method, ...customOptions }, urlVariables, params) {
   const variableList = Array.isArray(urlVariables) ? urlVariables : [urlVariables];
   const url = endpoint(...variableList);
@@ -41,7 +45,16 @@ function makeRequest({ endpoint, method, ...customOptions }, urlVariables, param
 
   const reqPromise = axios
     .request(options)
-    .then(response => response.data)
+    .then(response => {
+      if (response.headers['content-type'] === CONTENT_TYPE.IMAGE) {
+        const image = btoa(
+          new Uint8Array(response.data)
+            .reduce((data, byte) => data + String.fromCharCode(byte), '')
+        );
+        return `data:${response.headers['content-type'].toLowerCase()};base64,${image}`;
+      }
+      return response.data;
+    })
     .catch(error => Promise.reject(error));
 
 
