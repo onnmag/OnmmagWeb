@@ -2,15 +2,20 @@ import React, { useContext, createContext, useState, useEffect } from 'react';
 import auth0 from 'auth0-js';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import params from '../config/auth0-parma.json';
 
+import params from '../config/auth0-parma.json';
+import { AUTH0 } from './KEYS';
+import LocalStorage from '../utils/LocalStorage';
+
+import { usePostApi } from '../hooks/useApi';
+import { signUpApi } from '../components/modules/Login/Main/partials/Form/partials/SignUp/apiRequest';
 
 const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
   const history = useHistory();
-  const [userToken, setUserToken] = useState(null);
-  const [isLoggedIn, setLoginStatus] = useState(!!userToken);
+  const { makeRequest, isLoading } = usePostApi();
+  const [isLoggedIn, setLoginStatus] = useState(LocalStorage.get('access-token'));
   const auth0Client = new auth0.WebAuth({
     domain: params.domain,
     clientID: params.clientId,
@@ -40,23 +45,28 @@ function AuthProvider({ children }) {
       if (err) {
         console.log(err);
       } else {
-        console.log(data);
-        // auth0.client.userInfo(accessToken, (err, user) => {
-        //   console.log(user);
-        // });
-        // TODO: set TOKEN
-        // setLoginStatus(true);
+        LocalStorage.set('access-token', data.accessToken, data.expiresIn);
+        setLoginStatus(true);
       }
     });
   };
 
   const logOut = () => {
-
+    LocalStorage.deleteItem('access-token');
+    setLoginStatus(false);
   };
 
-  const signUp = () => [
-
-  ];
+  const signUp = (data) => {
+    makeRequest(signUpApi({
+      ...data,
+      client_id: AUTH0.CLIENT_ID,
+    }))
+      .then(res => {
+        console.log({ res });
+      }).catch(err => {
+        console.log({ err });
+    });
+  };
 
   return (
     <AuthContext.Provider value={{

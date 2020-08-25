@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import useInputField from '../../../../../../../../hooks/useInputField';
+import { useAuth } from '../../../../../../../../core/authProvider';
 import { INPUT_TYPES } from '../../../../../../../../constants/STATICS';
 import { BUTTON, FORM_TYPE, INPUT_LABELS, STATICS } from '../../../../enum';
 import { isFormValid } from '../../../../../../../../utils/validations';
@@ -12,6 +13,8 @@ import Button from '../../../../../../../common/Button';
 import styles from './index.scss';
 
 function SignUp({ setFormType }) {
+  const { signUp } = useAuth();
+
   const firstName = useInputField({ type: INPUT_TYPES.FIRST_NAME });
   const lastName = useInputField({ type: INPUT_TYPES.LAST_NAME });
   const password = useInputField({ type: INPUT_TYPES.PASSWORD });
@@ -19,17 +22,15 @@ function SignUp({ setFormType }) {
   const email = useInputField({ type: INPUT_TYPES.EMAIL });
   const userName = useInputField({ type: INPUT_TYPES.USER_NAME });
 
-  const signUp = () => {
+  const submit = () => {
     const form = {
-      firstName: firstName.inputValue,
-      lastName: lastName.inputValue,
+      name: `${firstName.inputValue} ${lastName.inputValue}`,
       password: password.inputValue,
-      confirmPassword: confirmPassword.inputValue,
-      email: confirmPassword.inputValue,
-      userName: userName.inputValue,
+      username: userName.inputValue,
+      email: email.inputValue,
     };
     const isValid = isFormValid([firstName, lastName, password, confirmPassword, email, userName]);
-    console.log(isValid, form);
+    signUp(form, isValid);
   };
 
   return (
@@ -98,7 +99,7 @@ function SignUp({ setFormType }) {
       />
       <div className={styles.buttonContainer}>
         <Button
-          onClick={signUp}
+          onClick={submit}
           className={styles.btn}
         >
           {BUTTON.SIGN_UP}

@@ -1,3 +1,5 @@
+import { AUTH0 } from '../core/KEYS';
+
 const REQUEST_METHODS = {
   GET: 'GET',
   POST: 'POST',
@@ -25,6 +27,12 @@ const ENDPOINTS = {
       method: REQUEST_METHODS.GET,
       endpoint: () => 'https://picsum.photos/40/40.jpg',
       responseType: 'arraybuffer',
+    },
+  },
+  AUTH: {
+    SIGN_UP: {
+      method: REQUEST_METHODS.POST,
+      endpoint: () => `${AUTH0.AUTH_DOMAIN}/dbconnections/signup`,
     },
   },
 };
