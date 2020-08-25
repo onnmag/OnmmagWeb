@@ -25,11 +25,9 @@
   "author": "Onnmag",
   "license": "ISC",
   "dependencies": {
-    "@auth0/auth0-react": "^1.0.0",
-    "@auth0/auth0-spa-js": "^1.11.0",
     "add": "^2.0.6",
     "approximate-number": "^2.0.0",
-    "auth0-js": "^9.13.4",
+    "auth0-js": "^9.13.3",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "file-loader": "^6.0.0",

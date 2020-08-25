@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { Validations } from '../utils/validations';
 
-function useInputField({ type, validate = true }) {
-  const [inputValue, setInputValue] = useState('');
+function useInputField({ type, validate = true, initialValue = '' }) {
+  const [inputValue, setInputValue] = useState(initialValue);
   const [validationObject, setValidationObject] = useState({
     isValid: !validate,
     errorMessage: '',

@@ -12,8 +12,17 @@ import styles from './index.scss';
 
 function Login({ setFormType }) {
   const { logIn } = useAuth();
-  const email = useInputField({ type: INPUT_TYPES.EMAIL });
-  const password = useInputField({ type: INPUT_TYPES.PASSWORD });
+  const userName = useInputField({ type: INPUT_TYPES.USER_NAME, initialValue: 'rraghav1' });
+  const password = useInputField({ type: INPUT_TYPES.PASSWORD, initialValue: 'Raghav!@#123' });
+
+  const handleLogin = () => {
+    if (userName.inputValue && password.inputValue) {
+      logIn({
+        username: userName.inputValue,
+        password: password.inputValue,
+      });
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -22,21 +31,23 @@ function Login({ setFormType }) {
         <p>{STATICS.DESCRIPTION}</p>
       </div>
       <Input
-        label={INPUT_LABELS.EMAIL}
-        value={email.inputValue}
-        onChange={email.handleInputValue}
-        isValid={email.isValid}
-        onBlur={email.handleOnBlur}
+        label={INPUT_LABELS.USER_NAME}
+        value={userName.inputValue}
+        onChange={userName.handleInputValue}
+        validationObject={userName.validationObject}
+        onBlur={userName.handleOnBlur}
+        isTouched={userName.isTouched}
+        placeholder={INPUT_PLACEHOLDERS.USER_NAME}
         type="input"
-        placeholder={INPUT_PLACEHOLDERS.EMAIL}
       />
 
       <Input
         label={INPUT_LABELS.PASSWORD}
         value={password.inputValue}
         onChange={password.handleInputValue}
-        isValid={password.isValid}
+        validationObject={password.validationObject}
         onBlur={password.handleOnBlur}
+        isTouched={password.isTouched}
         type="password"
       />
 
@@ -45,7 +56,9 @@ function Login({ setFormType }) {
       </div>
 
       <div className={styles.btnContainer}>
-        <Button onClick={logIn}>
+        <Button
+          onClick={handleLogin}
+        >
           {BUTTON.LOGIN}
         </Button>
       </div>

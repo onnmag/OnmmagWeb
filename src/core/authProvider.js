@@ -1,7 +1,8 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
+import auth0 from 'auth0-js';
 import { useHistory } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react';
 import PropTypes from 'prop-types';
+import params from '../config/auth0-parma.json';
 
 
 const AuthContext = createContext(null);
@@ -10,68 +11,52 @@ function AuthProvider({ children }) {
   const history = useHistory();
   const [userToken, setUserToken] = useState(null);
   const [isLoggedIn, setLoginStatus] = useState(!!userToken);
-  const { isLoading, isAuthenticated, loginWithRedirect, logout, error } = useAuth0();
+  const auth0Client = new auth0.WebAuth({
+    domain: params.domain,
+    clientID: params.clientId,
+    audience: params.apiAudience,
+    redirectUri: params.callbackUrl,
+    scope: params.scope,
+    responseType: 'code',
+    grantType: 'refresh_token',
+  });
 
   useEffect(() => {
-    // initialize auth0
-  }, []);
-
-
-  useEffect(() => {
-    // const isUserToken = localStorage.getItem('sso-token');
-    // if (isUserToken) {
-    //   setUserToken(true);
-    //   setLoginStatus(true);
-    //   history.push('/dashboard');
-    // } else {
-    //   history.push('/login');
-    // }
-    if (!isLoading) {
-      if (isAuthenticated) {
-        console.log('entered');
-        setLoginStatus(true);
-        history.push('/dashboard');
-      } else {
-        history.push('/login');
-      }
+    if (isLoggedIn) {
+      history.push('/dashboard');
+    } else {
+      history.push('/login');
     }
-  }, [history, isAuthenticated, isLoading]);
+  }, [history, isLoggedIn]);
 
-  const logIn = () => {
-    // localStorage.setItem('sso-token', 'xyz');
-    // setUserToken('xyz');
-    // setLoginStatus(true);
-    // history.push('/dashboard');
 
-    loginWithRedirect()
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
+  const logIn = ({ username, password }) => {
+    auth0Client.client.login({
+      realm: 'Username-Password-Authentication',
+      username,
+      password,
+      grantType: 'refresh_token',
+    }, (err, data) => {
+      if (err) {
         console.log(err);
-      });
+      } else {
+        console.log(data);
+        // auth0.client.userInfo(accessToken, (err, user) => {
+        //   console.log(user);
+        // });
+        // TODO: set TOKEN
+        // setLoginStatus(true);
+      }
+    });
   };
 
-
   const logOut = () => {
-    // localStorage.removeItem('sso-token');
-    // setLoginStatus(false);
-    // setUserToken(null);
-    // history.push('/login');
-    setLoginStatus(false);
-    logout();
+
   };
 
   const signUp = () => [
 
   ];
-  if (isLoading) {
-    return <span>Loading...</span>;
-  }
-
-  if (error) {
-    return <span>Error please refresh the page</span>;
-  }
 
   return (
     <AuthContext.Provider value={{

@@ -25,6 +25,7 @@ const INPUT_LABELS = {
 
 const INPUT_PLACEHOLDERS = {
   EMAIL: 'abc@xyz.com',
+  USER_NAME: 'username',
 };
 
 const BUTTON = {
