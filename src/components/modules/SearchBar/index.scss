@@ -8,21 +8,53 @@
   align-items: center;
 }
 
+.label {
+  display: flex;
+  background-color: var(--grey-5);
+  border-radius: 1rem;
+}
+
 .searchBox {
+  @include typography(input);
+  background-color: inherit;
+  border-radius: inherit;
   outline: none;
   border: none;
-  background-color: var(--grey-5);
-  padding: 1rem 1rem 1rem 3.5rem;
-  border-radius: 1rem;
+  padding: 1rem;
   width: 25vw;
-  color: var(--manatee);
+  color: var(--grey-1);
+
   &::placeholder {
-    color: RGBA(var(--manatee-alpha), .8);
+    color: RGBA(var(--grey-1-alpha), .8);
   }
 }
 
+
+.btn {
+  cursor: pointer;
+  padding: 1rem;
+  outline: none;
+  background: transparent;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+
+  &:hover {
+    background-color: RGBA(var(--grey-4-alpha), .9);
+    .icon {
+      color: RGBA(var(--grey-1-alpha), .5);
+    }
+  }
+
+  &:active {
+    background-color: RGBA(var(--grey-4-alpha), .5);
+
+    .icon {
+      color: RGBA(var(--grey-1-alpha), .3);
+    }
+  }
+}
 .icon {
-  position: absolute;
-  left: 1rem;
-  color: var(--manatee);
+  color: var(--grey-2);
+  display: flex;
+  align-items: center;
 }

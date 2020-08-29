@@ -16,6 +16,7 @@ const AppContext = createContext(null);
 function App() {
   const [activePage, setActivePage] = useState(SIDEBAR.PAGES[0]);
   const [activeTheme, setActiveTheme] = useState(getActiveTheme() || THEMES.LIGHT);
+  const [searchInputValue, setSearchValue] = useState('');
 
   const setTheme = (theme) => {
     setActiveTheme(theme);
@@ -42,6 +43,8 @@ function App() {
           activePage,
           setActivePage,
           activeTheme,
+          searchInputValue,
+          setSearchValue,
           setTheme,
           toggleTheme,
         }}

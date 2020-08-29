@@ -29,6 +29,16 @@ const ENDPOINTS = {
       responseType: 'arraybuffer',
     },
   },
+  VIDEOS: {
+    SEARCH: {
+      method: REQUEST_METHODS.GET,
+      endpoint: () => 'https://www.googleapis.com/youtube/v3/search',
+    },
+    VIDEOS_LIST: {
+      method: REQUEST_METHODS.GET,
+      endpoint: () => 'https://www.googleapis.com/youtube/v3/videos',
+    },
+  },
   AUTH: {
     SIGN_UP: {
       method: REQUEST_METHODS.POST,

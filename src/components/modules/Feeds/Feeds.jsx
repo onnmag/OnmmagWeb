@@ -1,26 +1,20 @@
-import React, { useRef, useCallback } from 'react';
+import React from 'react';
 import random from 'random-name';
 import PropTypes from 'prop-types';
 
 import PostCard from '../../common/PostCard';
 import { LINKS, CONTENT_TYPE } from '../../../constants/STATICS';
 
+import { useInfiniteScrolling } from '../../../hooks/useInfiniteScrolling';
+
 import styles from './index.scss';
 
 function Feeds({ feeds, hasMore, isLoading, error, setPageNumber }) {
-  const observer = useRef();
-  const lastFeedRef = useCallback((node) => {
-    if (isLoading) return;
-    if (observer.current) observer.current.disconnect();
-    observer.current = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && hasMore) {
-        setPageNumber(prevPageNumber => prevPageNumber + 1);
-      }
-    });
-    if (node) {
-      observer.current.observe(node);
-    }
-  }, [isLoading, hasMore, setPageNumber]);
+  const lastFeedRef = useInfiniteScrolling({
+    callback: () => setPageNumber(prevPageNumber => prevPageNumber + 1),
+    isLoading,
+    hasMore,
+  });
   return (
     <div className={styles.container}>
       {feeds.map((feed, index) => {

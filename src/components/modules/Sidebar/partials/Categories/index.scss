@@ -5,6 +5,11 @@
   animation-name: slide-in;
   animation-duration: .2s;
   animation-fill-mode: forwards;
+  color: var(--grey-1);
+}
+
+.explore {
+  color: var(--grey-1);
 }
 
 @keyframes slide-in {
