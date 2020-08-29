@@ -117,3 +117,12 @@
 .qrDescription {
   margin: 0;
 }
+
+[data-theme='dark'] {
+  .btnContainer {
+    > button {
+      background-color: var(--primary-color);
+      color: var(--grey-5);
+    }
+  }
+}

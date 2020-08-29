@@ -7,7 +7,7 @@ import AuthProvider from './core/authProvider';
 import { SIDEBAR } from './mocks';
 
 import { getActiveTheme, setSelectedTheme } from './utils';
-import { THEMES } from './Enums/STATICS';
+import { THEMES } from './constants/STATICS';
 
 import './styles/app.scss';
 

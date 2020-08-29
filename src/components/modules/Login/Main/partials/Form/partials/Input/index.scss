@@ -14,7 +14,7 @@
 
 .label {
   @include typography(p1, bold);
-  color: var(--white);
+  color: var(--grey-6);
   margin-right: 2rem;
   margin-bottom: 1rem;
 }
@@ -25,10 +25,36 @@
   outline: none;
   border-radius: .5rem;
   color: var(--grey-1);
-  border: 3px solid transparent;
+  background-color: var(--grey-5);
+  border: 1px solid transparent;
   padding: .5rem 1rem;
 
   &:focus {
-    border-color: var(--secondary-color);
+    //border-color: var(--secondary-color);
   }
+}
+
+.inputError {
+  border-color: var(--warn);
+}
+
+.errorMessage {
+  @include typography(p1);
+  display: inline-block;
+  padding-top: .5rem;
+  color: var(--warn);
+}
+
+
+[data-theme='dark'] {
+  .label {
+    color: var(--grey-1);
+  }
+  .input {
+    border-color: var(--grey-4)
+  }
+  .inputError {
+    border-color: var(--warn);
+  }
+
 }

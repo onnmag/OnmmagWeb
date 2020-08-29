@@ -8,12 +8,12 @@ import SignUp from './partials/SignUp';
 import styles from './index.scss';
 
 function Form() {
-  const [formType] = useState(FORM_TYPE.LOGIN);
+  const [formType, setFormType] = useState(FORM_TYPE.LOGIN);
   return (
     <div className={styles.container}>
       {formType === FORM_TYPE.LOGIN ?
-        <Login /> :
-        <SignUp />
+        <Login setFormType={setFormType} /> :
+        <SignUp setFormType={setFormType} />
       }
     </div>
   );

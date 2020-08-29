@@ -1,38 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
-import { LINKS } from '../../../../../Enums/STATICS';
+
+import { useGetApi } from '../../../../../hooks/useApi';
 
 import MoreVertical from '../../../MoreVertical';
 import Options from '../Options';
 
+import { ROUTES_LINKS } from '../../../../pages/Main/Routes/Enums';
+import { getPost40 } from '../../../../modules/Feeds/FeedsApi';
+
+
 import styles from './index.scss';
 
 function PostInfo({ title, name }) {
-  const [imageUrl, setImageUrl] = useState('');
-  const [isImageLoaded, setImageLoaded] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [imageData, setImageData] = useState('');
+  const { makeRequest, inProgress } = useGetApi();
   useEffect(() => {
-    fetch(LINKS.RANDOM_PROFILE_IMAGE)
-      .then(res => {
-        setImageUrl(res.url);
-        const img = new Image();
-        img.onload = () => {
-          setImageLoaded(true);
-        };
-        img.src = res.url;
-        setIsLoading(false);
+    makeRequest(getPost40())
+      .then(response => {
+        setImageData(response);
       });
-  }, []);
+  }, [makeRequest]);
   return (
     <div className={styles.container}>
       <div>
         <div className={styles.about}>
           {
-            isLoading && !isImageLoaded ?
+            inProgress ?
               <span className={styles.loader} /> :
-              <img src={imageUrl} alt={name} className={styles.image} />
+              <img src={imageData} alt={name} className={styles.image} />
           }
           <div className={styles.postInfo}>
             <Link to={`${ROUTES_LINKS.PROFILE}/ester_exposito`}>

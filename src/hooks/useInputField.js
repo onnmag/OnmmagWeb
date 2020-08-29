@@ -1,28 +1,21 @@
 import { useState } from 'react';
 
-import { INPUT_TYPES } from '../Enums/STATICS';
+import { Validations } from '../utils/validations';
 
-function useInputField({ type, validate = true }) {
-  const [inputValue, setInputValue] = useState('');
-  const [isValid, setIsValid] = useState(false);
+function useInputField({ type, validate = true, initialValue = '' }) {
+  const [inputValue, setInputValue] = useState(initialValue);
+  const [validationObject, setValidationObject] = useState({
+    isValid: !validate,
+    errorMessage: '',
+  });
   const [isTouched, setIsTouched] = useState(false);
 
-  const validateInput = (value) => {
-    switch (type) {
-      case INPUT_TYPES.EMAIL:
-        return value.length > 0;
-      case INPUT_TYPES.PASSWORD:
-        return value.length > 0;
-      default:
-        return value.length > 0;
-    }
-  };
+  const validateInput = (value, rest) => Validations({ type, inputValue: value, rest });
 
-  const handleInputValue = (e) => {
-    setIsTouched(true);
+  const handleInputValue = (e, ...rest) => {
     setInputValue(e.target.value);
     if (validate) {
-      setIsValid(validateInput(e.target.value));
+      setValidationObject(validateInput(e.target.value, rest));
     }
   };
 
@@ -34,7 +27,7 @@ function useInputField({ type, validate = true }) {
     inputValue,
     handleInputValue,
     handleOnBlur,
-    isValid,
+    validationObject,
     isTouched,
   };
 }

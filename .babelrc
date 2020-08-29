@@ -3,7 +3,6 @@
     "production": {
       "plugins": [
         "babel-plugin-webpack-alias",
-        "transform-decorators-legacy",
         "transform-class-properties",
         "syntax-dynamic-import",
         "transform-async-to-generator"
@@ -16,12 +15,8 @@
     },
     "development": {
       "plugins": [
-        "babel-plugin-webpack-alias",
-        "transform-decorators-legacy",
-        "transform-class-properties",
-        "syntax-dynamic-import"
-      ],
-      "presets": ["env","react", "airbnb"]
+        "@babel/plugin-proposal-optional-chaining"
+      ]
     }
   }
 }

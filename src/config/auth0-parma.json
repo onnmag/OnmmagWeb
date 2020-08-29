@@ -1,0 +1,7 @@
+{
+  "domain": "dev-o818prvc.auth0.com",
+  "clientId": "hIW9s6hAkX6CL0yO9PPafZsBnbzOEr3i",
+  "callbackUrl": "http://localhost:9000",
+  "realm": "Username-Password-Authentication",
+  "scope":"read:current_user update:current_user_metadata"
+}

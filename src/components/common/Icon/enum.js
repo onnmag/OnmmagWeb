@@ -3,7 +3,7 @@ import {
   MdHome, MdBook, MdVideoLibrary, MdLibraryMusic, MdSearch, MdPeople,
   MdNotifications, MdMessage, MdFavorite, MdShare,
   MdLocalMovies, MdLibraryBooks, MdVerifiedUser, MdComment, MdMenu,
-  MdMoreVert, MdWbSunny,
+  MdMoreVert, MdWbSunny, MdPowerSettingsNew,
 } from 'react-icons/md';
 
 
@@ -31,6 +31,7 @@ const ICONS_NAME = {
   MENU: 'MENU',
   MORE_VERT: 'MORE_VERT',
   SUN: 'SUN',
+  LOG_OUT: 'LOG_OUT',
 };
 
 const ICON = {
@@ -52,6 +53,7 @@ const ICON = {
     [ICONS_NAME.MENU]: MdMenu,
     [ICONS_NAME.MORE_VERT]: MdMoreVert,
     [ICONS_NAME.SUN]: MdWbSunny,
+    [ICONS_NAME.LOG_OUT]: MdPowerSettingsNew,
   },
   [THEME.DARK]: {
     [ICONS_NAME.HOME]: MdHome,
@@ -71,6 +73,7 @@ const ICON = {
     [ICONS_NAME.MENU]: MdMenu,
     [ICONS_NAME.MORE_VERT]: MdMoreVert,
     [ICONS_NAME.SUN]: MdWbSunny,
+    [ICONS_NAME.LOG_OUT]: MdPowerSettingsNew,
   },
 };
 

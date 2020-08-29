@@ -1,54 +1,34 @@
-import React, { useRef, useCallback, useState } from 'react';
-import random from 'random-name';
+import React, { useEffect, useState } from 'react';
+import { usePostApi } from '../../../hooks/useApi';
+import { getFeeds } from './FeedsApi';
 
-import PostCard from '../../common/PostCard';
-import useFetchFeeds from '../../../hooks/useFetchFeeds';
-import { LINKS, CONTENT_TYPE } from '../../../Enums/STATICS';
+import Feeds from './Feeds';
 
-import styles from './index.scss';
-
-function Feeds() {
+function FeedsPage() {
   const [pageNumber, setPageNumber] = useState(1);
-  const { isLoading, isError, feeds, hasMore } = useFetchFeeds({ pageNumber });
-  const observer = useRef();
-  const lastFeedRef = useCallback((node) => {
-    if (isLoading) return;
-    if (observer.current) observer.current.disconnect();
-    observer.current = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && hasMore) {
-        setPageNumber(prevPageNumber => prevPageNumber + 1);
-      }
-    });
-    if (node) {
-      observer.current.observe(node);
-    }
-  }, [isLoading, hasMore]);
+  const [feeds, setFeeds] = useState([]);
+  const [hasMore, setHasMore] = useState(false);
+
+  const { makeRequest, inProgress, failed } = usePostApi();
+
+  useEffect(() => {
+    makeRequest(getFeeds({ pageNumber }))
+      .then((response) => {
+        setFeeds(prevFeeds => ([
+          ...prevFeeds,
+          ...response,
+        ]));
+        setHasMore(response.length > 0);
+      });
+  }, [makeRequest, pageNumber]);
   return (
-    <div className={styles.container}>
-      {feeds.map((feed, index) => {
-        const Card = (
-          <PostCard
-            {...feed}
-            name={`${random.first()} ${random.last()}`}
-            profileImage={LINKS.RANDOM_PROFILE_IMAGE}
-            content={LINKS.RANDOM_POST}
-            contentType={CONTENT_TYPE.IMAGE}
-          />
-        );
-        return (
-          <div
-            key={feed.id}
-            className={styles.card}
-            ref={index === feeds.length - 1 ? lastFeedRef : null}
-          >
-            {Card}
-          </div>
-        );
-      })}
-      <div>{isLoading && 'Loading...'}</div>
-      <div>{isError && 'Error'}</div>
-    </div>
+    <Feeds
+      feeds={feeds}
+      hasMore={hasMore}
+      isLoading={inProgress}
+      failed={failed}
+      setPageNumber={setPageNumber}
+    />
   );
 }
-
-export default Feeds;
+export default FeedsPage;

@@ -1,18 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import useInputField from '../../../../../../../../hooks/useInputField';
-import { INPUT_LABELS, STATICS, BUTTON, INPUT_PLACEHOLDERS } from '../../../../enum';
-import { INPUT_TYPES } from '../../../../../../../../Enums/STATICS';
+import { INPUT_LABELS, STATICS, BUTTON, INPUT_PLACEHOLDERS, FORM_TYPE } from '../../../../enum';
+import { INPUT_TYPES } from '../../../../../../../../constants/STATICS';
 import Input from '../Input';
 import Button from '../../../../../../../common/Button';
 import { useAuth } from '../../../../../../../../core/authProvider';
 
 import styles from './index.scss';
 
-function Login() {
+function Login({ setFormType }) {
   const { logIn } = useAuth();
-  const email = useInputField({ type: INPUT_TYPES.EMAIL });
-  const password = useInputField({ type: INPUT_TYPES.PASSWORD });
+  const userName = useInputField({ type: INPUT_TYPES.USER_NAME, initialValue: 'rraghav1' });
+  const password = useInputField({ type: INPUT_TYPES.PASSWORD, initialValue: 'Raghav!@#123' });
+
+  const handleLogin = () => {
+    if (userName.inputValue && password.inputValue) {
+      logIn({
+        username: userName.inputValue,
+        password: password.inputValue,
+      });
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -21,21 +31,23 @@ function Login() {
         <p>{STATICS.DESCRIPTION}</p>
       </div>
       <Input
-        label={INPUT_LABELS.EMAIL}
-        value={email.inputValue}
-        onChange={email.handleInputValue}
-        isValid={email.isValid}
-        onBlur={email.handleOnBlur}
+        label={INPUT_LABELS.USER_NAME}
+        value={userName.inputValue}
+        onChange={userName.handleInputValue}
+        validationObject={userName.validationObject}
+        onBlur={userName.handleOnBlur}
+        isTouched={userName.isTouched}
+        placeholder={INPUT_PLACEHOLDERS.USER_NAME}
         type="input"
-        placeholder={INPUT_PLACEHOLDERS.EMAIL}
       />
 
       <Input
         label={INPUT_LABELS.PASSWORD}
         value={password.inputValue}
         onChange={password.handleInputValue}
-        isValid={password.isValid}
+        validationObject={password.validationObject}
         onBlur={password.handleOnBlur}
+        isTouched={password.isTouched}
         type="password"
       />
 
@@ -44,14 +56,16 @@ function Login() {
       </div>
 
       <div className={styles.btnContainer}>
-        <Button onClick={logIn}>
+        <Button
+          onClick={handleLogin}
+        >
           {BUTTON.LOGIN}
         </Button>
       </div>
       <div className={styles.label}>
         <span className={styles.signUp}>
           {'Not a member yet? '}
-          <a>{BUTTON.SIGN_UP}</a>
+          <a onClick={() => setFormType(FORM_TYPE.SIGN_UP)}>{BUTTON.SIGN_UP}</a>
           {' here'}
         </span>
       </div>
@@ -68,5 +82,9 @@ function Login() {
     </div>
   );
 }
+
+Login.propTypes = {
+  setFormType: PropTypes.func.isRequired,
+};
 
 export default Login;
