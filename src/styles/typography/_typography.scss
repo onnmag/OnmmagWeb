@@ -25,6 +25,12 @@
     line-height: 2.4rem;
   }
 
+  @if $size == h5 {
+    font-family: Spectral, Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
   @if $size == input {
     font-family: Darker Grotesque, Helvetica, Arial, sans-serif;
     font-size: 1.8rem;

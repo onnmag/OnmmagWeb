@@ -1,0 +1,9 @@
+@import '../../../styles/main';
+
+.container {
+  display: grid;
+  margin-left: 9rem;
+  padding: 1rem;
+  grid-column-gap: 4rem;
+  justify-content: center;
+}

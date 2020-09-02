@@ -1,27 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Route } from 'react-router-dom';
 
-import { useGetApi } from '../../../hooks/useApi';
-import { VideosList } from './api';
-// import { useAppState } from '../../../App';
+import { ROUTES_LINKS, ROUTES_NAME } from '../Main/Routes/Enums';
 
-import Videos from './Videos';
+import Video from './partials/VideoContainer';
+import VideosWatch from './partials/Watch';
 
-function Video() {
-  const { makeRequest } = useGetApi();
-  useEffect(() => {
-    makeRequest(VideosList({
-      part: 'snippet',
-      chart: 'mostPopular',
-    }))
-      .then(res => {
-        console.log({ res });
-      }).catch(err => {
-        console.log(err);
-    });
-  }, [makeRequest]);
+function VideoRoutes() {
   return (
-    <Videos />
+    <div>
+      <Route
+        path={ROUTES_LINKS[ROUTES_NAME.VIDEOS]}
+        component={Video}
+        exact
+      />
+      <Route
+        path={ROUTES_LINKS[ROUTES_NAME.WATCH]}
+        component={VideosWatch}
+        exact
+      />
+    </div>
   );
 }
 
-export default Video;
+export default VideoRoutes;

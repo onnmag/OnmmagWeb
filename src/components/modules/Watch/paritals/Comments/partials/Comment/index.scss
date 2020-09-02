@@ -1,0 +1,65 @@
+@import '../../../../../../../styles/main';
+
+.container {
+  display: flex;
+}
+
+.usersImage {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+
+  img {
+    border-radius: inherit;
+  }
+}
+
+.commentDetails {
+
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  @include typography(p1);
+  color: var(--grey-1);
+  margin-right: 1rem;
+}
+
+.date {
+  @include typography(p2);
+  color: var(--grey-2);
+}
+
+.comment {
+  @include typography(p1);
+  margin-top: .5rem;
+  color: var(--grey-1);
+}
+
+.actions {
+  display: flex;
+  margin-top: 1.2rem;
+
+  > .action:first-child {
+    margin-right: 1.6rem;
+  }
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  color: var(--grey-1);
+  cursor: pointer;
+}
+
+.count {
+  @include typography(p1);
+  margin-left: .8rem;
+  margin-bottom: .8rem;
+  color: var(--grey-1);
+}

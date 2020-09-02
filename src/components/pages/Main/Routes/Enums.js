@@ -14,11 +14,13 @@ const ROUTES_NAME = {
   PROFILE: 'PROFILE',
   FEEDS: 'FEEDS',
   HOME: 'HOME',
+  WATCH: 'WATCH',
 };
 
 const ROUTES_LINKS = {
   [ROUTES_NAME.HALL_OF_FAME]: `${baseName}/hall-of-fame`,
   [ROUTES_NAME.VIDEOS]: `${baseName}/videos`,
+  [ROUTES_NAME.WATCH]: `${baseName}/videos/watch`,
   [ROUTES_NAME.MUSIC]: `${baseName}/music`,
   [ROUTES_NAME.MOVIES]: `${baseName}/movies`,
   [ROUTES_NAME.WEB_SERIES]: `${baseName}/web-series`,

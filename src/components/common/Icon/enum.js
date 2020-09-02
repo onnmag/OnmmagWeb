@@ -3,7 +3,7 @@ import {
   MdHome, MdBook, MdVideoLibrary, MdLibraryMusic, MdSearch, MdPeople,
   MdNotifications, MdMessage, MdFavorite, MdShare,
   MdLocalMovies, MdLibraryBooks, MdVerifiedUser, MdComment, MdMenu,
-  MdMoreVert, MdWbSunny, MdPowerSettingsNew,
+  MdMoreVert, MdWbSunny, MdPowerSettingsNew, MdThumbDown, MdThumbUp,
 } from 'react-icons/md';
 
 
@@ -23,6 +23,8 @@ const ICONS_NAME = {
   MESSAGE: 'MESSAGE',
   FRIENDS: 'FRIENDS',
   LIKE: 'LIKE',
+  VIDEO_LIKE: 'VIDEO_LIKE',
+  DISLIKE: 'DISLIKE',
   SHARE: 'SHARE',
   MOVIES: 'MOVIES',
   ARTICLES: 'ARTICLES',
@@ -54,6 +56,8 @@ const ICON = {
     [ICONS_NAME.MORE_VERT]: MdMoreVert,
     [ICONS_NAME.SUN]: MdWbSunny,
     [ICONS_NAME.LOG_OUT]: MdPowerSettingsNew,
+    [ICONS_NAME.DISLIKE]: MdThumbDown,
+    [ICONS_NAME.VIDEO_LIKE]: MdThumbUp,
   },
   [THEME.DARK]: {
     [ICONS_NAME.HOME]: MdHome,
@@ -74,6 +78,8 @@ const ICON = {
     [ICONS_NAME.MORE_VERT]: MdMoreVert,
     [ICONS_NAME.SUN]: MdWbSunny,
     [ICONS_NAME.LOG_OUT]: MdPowerSettingsNew,
+    [ICONS_NAME.DISLIKE]: MdThumbDown,
+    [ICONS_NAME.VIDEO_LIKE]: MdThumbUp,
   },
 };
 

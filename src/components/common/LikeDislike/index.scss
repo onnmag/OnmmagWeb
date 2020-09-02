@@ -1,0 +1,15 @@
+@import '../../../styles/main';
+
+.container {
+  display: flex;
+  align-items: center;
+  color: var(--grey-1);
+  cursor: pointer;
+}
+
+.count {
+  @include typography(p1);
+  margin-left: .8rem;
+  margin-bottom: .8rem;
+  color: var(--grey-1);
+}

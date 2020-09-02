@@ -1,0 +1,32 @@
+@import '../../../styles/main';
+
+.container {
+  height: 100%;
+  margin-left: 9rem;
+  padding: 2rem 2rem 0 2rem;
+  display: grid;
+  grid-gap: 2rem 2.4rem;
+  grid-template-columns: minmax(640px, 2fr) 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "player comments"
+    "list comments"
+}
+
+.player {
+  grid-area: player;
+}
+
+.details {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.comments {
+  grid-area: comments;
+}
+
+.list {
+  grid-area: list;
+  margin-bottom: 2rem;
+}

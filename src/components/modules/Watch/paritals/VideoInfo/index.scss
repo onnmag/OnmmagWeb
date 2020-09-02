@@ -1,0 +1,99 @@
+@import '../../../../../styles/main';
+
+.titleContainer {
+  margin-bottom: .8rem;
+}
+
+.title {
+  @include typography(h5);
+  max-width: 60rem;
+  color: var(--grey-1);
+}
+
+.likeDislike {
+  display: flex;
+  > *:first-child {
+    margin-right: 1.5rem;
+  }
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .8rem;
+}
+
+.stats {
+  display: flex;
+}
+
+.viewCount {
+  @include typography(p1, bold);
+  color: var(--grey-2);
+}
+
+.uploadDate {
+  margin-left: .8rem;
+  @include typography(p1, bold);
+  color: var(--grey-1);
+}
+
+.description {
+  @include typography(p1);
+  color: var(--grey-3);
+  margin: 2rem 0;
+}
+
+.channelInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.channelInfo {
+  display: flex;
+}
+
+.userImage {
+  img {
+    border-radius: 50%;
+    height: 4.4rem;
+    width: 4.4rem;
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: .8rem;
+}
+
+.userTitle {
+  @include typography(p1);
+  color: var(--grey-1);
+}
+
+.location {
+  @include typography(p2);
+  color: var(--grey-2);
+}
+
+.subs {
+  @include typography(p1);
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  color: var(--grey-1);
+}
+.btn {
+  height: inherit;
+  background-color: RGBA(var(--primary-color-alpha), .75);
+  color: var(--white);
+  padding: 1rem;
+}
+
+.subsCount {
+  text-transform: uppercase;
+  margin-right: .5rem;
+  color: var(--primary-color);
+}

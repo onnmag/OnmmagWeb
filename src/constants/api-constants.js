@@ -38,6 +38,14 @@ const ENDPOINTS = {
       method: REQUEST_METHODS.GET,
       endpoint: () => 'https://www.googleapis.com/youtube/v3/videos',
     },
+    COMMENTS_THREADS: {
+      method: REQUEST_METHODS.GET,
+      endpoint: () => 'https://www.googleapis.com/youtube/v3/commentThreads',
+    },
+    CHANNEL: {
+      method: REQUEST_METHODS.GET,
+      endpoint: () => 'https://www.googleapis.com/youtube/v3/channels',
+    },
   },
   AUTH: {
     SIGN_UP: {

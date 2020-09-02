@@ -13,13 +13,6 @@ const ROUTES = [{
     loading: DefaultLoader,
   }),
 }, {
-  id: ROUTES_NAME.VIDEOS,
-  path: ROUTES_LINKS.VIDEOS,
-  component: Loadable({
-    loader: () => import('../../Videos'),
-    loading: DefaultLoader,
-  }),
-}, {
   id: ROUTES_NAME.MUSIC,
   path: ROUTES_LINKS.MUSIC,
   component: Loadable({
@@ -88,6 +81,14 @@ const ROUTES = [{
   exact: false,
   component: Loadable({
     loader: () => import('../../ProfilePage'),
+    loading: DefaultLoader,
+  }),
+}, {
+  id: ROUTES_NAME.VIDEOS,
+  path: ROUTES_LINKS.VIDEOS,
+  exact: false,
+  component: Loadable({
+    loader: () => import('../../Videos'),
     loading: DefaultLoader,
   }),
 }];

@@ -14,7 +14,7 @@ const AuthContext = createContext(null);
 
 function AuthProvider({ children }) {
   const history = useHistory();
-  const { makeRequest, isLoading } = usePostApi();
+  const { makeRequest } = usePostApi();
   const [isLoggedIn, setLoginStatus] = useState(LocalStorage.get('access-token'));
   const auth0Client = new auth0.WebAuth({
     domain: params.domain,
