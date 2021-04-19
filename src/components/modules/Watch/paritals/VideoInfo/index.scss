@@ -42,6 +42,8 @@
   @include typography(p1);
   color: var(--grey-3);
   margin: 2rem 0;
+  max-height: 5rem;
+  overflow: hidden;
 }
 
 .channelInfoContainer {

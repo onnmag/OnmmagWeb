@@ -9,7 +9,7 @@ import { STATICS } from '../../../constants/STATICS';
 import styles from './index.scss';
 
 function SearchBar() {
-  const { setSearchValue } = useAppState();
+  const { onSearch, setSearchValue } = useAppState();
   const [inputValue, setInputValue] = useState('');
 
   const handleInputValue = (e) => {
@@ -20,9 +20,11 @@ function SearchBar() {
     if (e.keyCode) {
       if (e.keyCode === 13 && inputValue.length) {
         setSearchValue(inputValue);
+        onSearch.callBack();
       }
     } else if (inputValue.length) {
-        setSearchValue(inputValue);
+      setSearchValue(inputValue);
+      onSearch.callBack();
       }
   };
 

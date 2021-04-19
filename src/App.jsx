@@ -17,6 +17,11 @@ function App() {
   const [activePage, setActivePage] = useState(SIDEBAR.PAGES[0]);
   const [activeTheme, setActiveTheme] = useState(getActiveTheme() || THEMES.LIGHT);
   const [searchInputValue, setSearchValue] = useState('');
+  const [onSearch, setOnSearch] = useState({
+    callBack: () => console.log('no component selected'),
+  });
+
+  console.log({ onSearch });
 
   const setTheme = (theme) => {
     setActiveTheme(theme);
@@ -47,6 +52,8 @@ function App() {
           setSearchValue,
           setTheme,
           toggleTheme,
+          setOnSearch,
+          onSearch,
         }}
         >
             <OpenRoutes />

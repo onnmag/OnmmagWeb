@@ -30,7 +30,7 @@ function Card({ data, id, size }) {
       </figure>
       <div>
         <h3 className={styles.title}>
-          <a>{data.localized.title}</a>
+          <a>{data.title}</a>
         </h3>
        <div className={styles.details}>
          <p className={styles.channelTitle}>

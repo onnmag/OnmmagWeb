@@ -8,7 +8,6 @@ import Comments from './paritals/Comments';
 
 import styles from './index.scss';
 
-
 function Watch({
    data: {
      comments,

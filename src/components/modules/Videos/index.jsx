@@ -27,11 +27,15 @@ function Index({ data, inProgress, callback }) {
         gridTemplateColumns: `repeat( auto-fill, minmax(${activeWidth}px,${activeWidth}px))`,
       }}
     >
-      {data.items.map((item, index) => (
-        <div ref={index === data.items.length - 1 ? lastVideoRef : null}>
-          <Card data={item.snippet} id={item.id} key={item.id} />
-        </div>
-      ))}
+      {data.items.map((item, index) => {
+        const id = typeof item.id === 'string' ? item.id : item.id.videoId;
+        console.log(id);
+        return (
+          <div ref={index === data.items.length - 1 ? lastVideoRef : null}>
+            <Card data={item.snippet} id={id} key={id} />
+          </div>
+        );
+      })}
       <div>Loading...</div>
     </div>
   );
