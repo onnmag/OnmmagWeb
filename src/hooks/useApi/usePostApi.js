@@ -8,11 +8,10 @@ function usePostApi({ throwError } = {}) {
     cancelPrevRequest: false,
   });
   const [failed, setFailed] = useState(false);
-  const makeRequest = useCallback(async (apiRequest) => {
+  const makeRequest = useCallback((apiRequest) => {
     try {
       setFailed(false);
-      const response = await makeApiRequest(apiRequest);
-      return response;
+      return  makeApiRequest(apiRequest).then(res => res);
     } catch (error) {
       setFailed(true);
       if (throwError) {

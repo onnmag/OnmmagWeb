@@ -59,6 +59,6 @@ export { useAppState };
 
 render(
     <App />,
-  document.getElementById('container'),
+  document.getElementById('root'),
 );
 

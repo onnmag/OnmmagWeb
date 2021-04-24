@@ -1,128 +1,83 @@
-/* eslint-disable */
-
-const webpack = require('webpack');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-const webpackMerge = require('webpack-merge');
-
-const getEnvironmentSpecificConfig= (env) => require(`./build-utils/webpack.config.${env}`)(env);
-
-const presetConfig = require("./build-utils/loadPresets");
-
-/**
- * All the build files will be stored in this directory
- */
-const BUILD_DIR = path.join(__dirname, 'src/dist/');
-
-module.exports = ({ mode, presets} = { mode: "production", presets: []})=> {
-  return webpackMerge({
-    watchOptions: {
-      poll: true,
-    },
-    /**
-     * If you do not add these webpack will not recognize the file
-     * and it will say file or module not found.
-     */
-    entry: {
-      start: './src/App.jsx',
-      react: ['react', 'react-dom'],
-    },
-    resolve: {
-      alias: {
-        '@common': path.resolve(__dirname, 'src/components/common'),
-        '@modules': path.resolve(__dirname, 'src/components/modules'),
-        '@pages': path.resolve(__dirname, 'src/components/pages'),
-      },
-      extensions: ['.js', '.jsx'],
-    },
+let mode = "development"
+// Hack required because HMR doesn't watch css (webpack-5) because of browerslist
+let target = "web"
 
 
+if(process.env.NODE_ENV === "production") {
+    mode = "production"
+    target = "browserslist"
+}
+
+module.exports = {
+    entry: ['./src/App.jsx'],
+    mode,
+    target,
     output: {
-      path: BUILD_DIR,
-      filename: '[name]-[hash].min.js',
+        path: path.resolve(__dirname, 'dist'),
     },
-
-    /**
-     * ## Modules section ##
-     * Here we define the loaders and other things
-     * required by webpack to understand how to deal
-     * with various files.
-     */
     module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: /(node_modules)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-react'],
-              plugins: ['@babel/plugin-syntax-dynamic-import', '@babel/plugin-proposal-object-rest-spread'],
-            },
-          }
-        },
-        {
-          loader: 'eslint-loader',
-          test: /\.jsx?$/,
-        },
-        {
-          test: /\.scss$/,
-          use: [
-            MiniCssExtractPlugin.loader,
+        rules: [
             {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoader: 2,
-              },
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }, {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+                exclude: /\.module\.css$/,
             },
-            'sass-loader',
-          ],
-        },
-        {
-          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-          loader: 'url-loader',
-          options: {
-            esModule: false,
-          }
-        },
-      ],
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true
+                        }
+                    },
+                    'sass-loader',
+                ],
+            },
+            {
+                test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+                loader: 'url-loader',
+                options: {
+                    esModule: false,
+                }
+            },
+        ],
     },
-    /**
-     * Plugins for webpack
-     */
-    plugins: [
-      new CleanWebpackPlugin([BUILD_DIR], {
-        verbose: true,
-        exclude: ['json'],
-      }),
-      new webpack.optimize.SplitChunksPlugin({
-        name: ['react'],
-        filename: '[name]-[hash].bundle.js',
-      }),
-      new HtmlWebpackPlugin({
-        title: 'Onnmag',
-        filename: 'index.html',
-        inject: true,
-        hash: true,
-        xhtml: true,
-        template: 'src/templates/react/index.ejs',
-      }),
-      new MiniCssExtractPlugin({
-        filename: 'styles-[name]-[hash].css',
-        chunkFilename: 'styles-[name]-[hash].css',
-      }),
-    ],
-  },
-    getEnvironmentSpecificConfig(mode),
-    presetConfig({mode, presets}),
-  )
-};
 
+    plugins: [
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin(),
+        new HtmlWebpackPlugin({
+            template: "./src/templates/react/index.ejs"
+        })
+    ],
+
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
+
+
+    devtool: "source-map", //enable source-map dev-tools
+    devServer: {
+        historyApiFallback: true,
+        contentBase: "./dist", // to render index.html directly instead of folder structure
+        hot: true, // enable hot-reloading instead of live reloading
+    }
+}
