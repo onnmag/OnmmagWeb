@@ -15,7 +15,7 @@ const AuthContext = createContext(null);
 function AuthProvider({ children }) {
   const history = useHistory();
   const { makeRequest, isLoading } = usePostApi();
-  const [isLoggedIn, setLoginStatus] = useState(true);
+  const [isLoggedIn, setLoginStatus] = useState(false);
   const auth0Client = new auth0.WebAuth({
     domain: params.domain,
     clientID: params.clientId,
@@ -25,6 +25,13 @@ function AuthProvider({ children }) {
     responseType: 'code',
     grantType: 'refresh_token',
   });
+
+  useEffect(() => {
+    const _isLoggedIn =  LocalStorage.get('access-token');
+    if(_isLoggedIn) {
+      setLoginStatus(true);
+    }
+  }, [])
 
   useEffect(() => {
     if (isLoggedIn) {

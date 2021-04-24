@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack')
 
 
 let mode = "development"
@@ -66,7 +67,10 @@ module.exports = {
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
             template: "./src/templates/react/index.ejs"
-        })
+        }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+        }),
     ],
 
     resolve: {
@@ -76,8 +80,15 @@ module.exports = {
 
     devtool: "source-map", //enable source-map dev-tools
     devServer: {
+        port: 9000,
         historyApiFallback: true,
-        contentBase: "./dist", // to render index.html directly instead of folder structure
-        hot: true, // enable hot-reloading instead of live reloading
-    }
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8080',
+                secure: false,
+                pathRewrite: { '^/api': '' },
+            },
+        },
+        host: '0.0.0.0',
+    },
 }
